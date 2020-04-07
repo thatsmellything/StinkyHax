@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://kodejava.org/how-do-i-create-port-scanner-program/ -->
+<html prefix="og: http://ogp.me/ns#" lang="en-US" style="" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths jetpack-lazy-images-js-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>How do I create port scanner program? | Kode Java</title>
+<style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1em}.svg-inline--fa.fa-stack-2x{height:2em;width:2em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style><link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://kodejava.org/xmlrpc.php">
+<!-- Jetpack Site Verification Tags -->
+<meta name="google-site-verification" content="3sPLO1x5pWKyteEgKVOCQoJ08UK-eTLByncXr4iPYhM">
+<meta name="msvalidate.01" content="8E5A81A126DE16F679F6C389978771E8">
+<meta name="p:domain_verify" content="3173627640d903928ef623118e0b40f7">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Kode Java » Feed" href="https://kodejava.org/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kode Java » Comments Feed" href="https://kodejava.org/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kode Java » How do I create port scanner program? Comments Feed" href="https://kodejava.org/how-do-i-create-port-scanner-program/feed/">
+		<script async="" src="./How do I create port scanner program_ _ Kode Java_files/analytics.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/kodejava.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./How do I create port scanner program_ _ Kode Java_files/wp-emoji-release.min.js(1).download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./How do I create port scanner program_ _ Kode Java_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./How do I create port scanner program_ _ Kode Java_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="post-views-counter-frontend-css" href="./How do I create port scanner program_ _ Kode Java_files/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="dw-minion-main-css" href="./How do I create port scanner program_ _ Kode Java_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="dw-minion-style-css" href="./How do I create port scanner program_ _ Kode Java_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="dw-minion-qa-css" href="./How do I create port scanner program_ _ Kode Java_files/style(3).css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./How do I create port scanner program_ _ Kode Java_files/social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./How do I create port scanner program_ _ Kode Java_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/jquery.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/related-posts.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/modernizr-2.6.2.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/postmessage.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/jquery.jetpack-resize.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/external-tracking.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://kodejava.org/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kodejava.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://kodejava.org/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="How do I get the maximum number of concurrent connections?" href="https://kodejava.org/how-do-i-get-the-maximum-number-of-concurrent-connections/">
+<link rel="next" title="How do I retrieve available catalogs in database?" href="https://kodejava.org/how-do-i-retrieve-available-schemas-in-database/">
+<meta name="generator" content="WordPress 5.2.3">
+<link rel="canonical" href="https://kodejava.org/how-do-i-create-port-scanner-program/">
+<link rel="shortlink" href="https://wp.me/p8avgG-av">
+<link rel="alternate" type="application/json+oembed" href="https://kodejava.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkodejava.org%2Fhow-do-i-create-port-scanner-program%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://kodejava.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkodejava.org%2Fhow-do-i-create-port-scanner-program%2F&amp;format=xml">
+
+<!-- StarBox - the Author Box for Humans 3.2.6, visit: http://wordpress.org/plugins/starbox/ -->
+<meta property="article:author" content="http://facebook.com/kodejava">
+<!-- /StarBox - the Author Box for Humans -->
+
+<link rel="stylesheet" id="ABHfrontend.min.css-css" href="./How do I create port scanner program_ _ Kode Java_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ABHhidedefault.min.css-css" href="./How do I create port scanner program_ _ Kode Java_files/hidedefault.min.css" type="text/css" media="all">
+
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="https://0.gravatar.com/">
+<link rel="dns-prefetch" href="https://1.gravatar.com/">
+<link rel="dns-prefetch" href="https://2.gravatar.com/">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<link rel="dns-prefetch" href="https://widgets.wp.com/">
+<link rel="dns-prefetch" href="https://c0.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style>    <style type="text/css" id="minion_layout" media="screen">
+    .container {margin: 0 auto;}
+    </style>
+    <link type="image/x-icon" href="https://kodejava.org/wp-content/uploads/2017/01/icon.png" rel="shortcut icon">    <style type="text/css" id="remove_leftbar" media="screen">
+      @media ( min-width: 1200px ) {
+        .site-actions {display: none;}
+        #page {margin-left: 0;}
+      }
+    </style>
+        <style type="text/css" id="minion_color" media="screen">
+      .btn:hover,#nav-below .btn:hover,.accordion-heading .accordion-toggle,.nav-tabs > li > a:hover, .nav-tabs > li > a:focus,.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus,.pager .pager-title .nav-next a:hover .btn, .pager .pager-title .nav-previous a:hover .btn, .entry-footer .entry-tags .tags-links a:hover,#cancel-comment-reply-link:hover,#commentform #submit,.post-password-required .entry-content input[type="submit"]:hover,blockquote p {
+        background-color: #3b5998;
+      }
+      a:hover,.btn-link:hover,.btn-link:focus,.comment-list .comment-datetime:hover,.comment-list .comment-edit-link:hover,.entry-meta a, .entry-meta .posted-on a:hover, .entry-meta .comments-link a:hover,.format-link .entry-content a,.format-quote .bq-meta a,.widget_nav_menu .current_page_item > a, .widget_nav_menu .current-menu-item > a,[class*="widget_recent_comments"] .url,.dw_twitter .tweet-content a {
+        color: #3b5998;
+      }
+      .nav-tabs > .active > a:before,blockquote cite:before {
+        border-top: 6px solid #3b5998;
+      }
+    </style>
+          <style type="text/css" id="heading_font" media="screen">
+        @font-face {
+          font-family: "Varela Round";
+          src: url('//themes.googleusercontent.com/static/fonts/varelaround/v3/APH4jr0uSos5wiut5cpjri3USBnSvpkopQaUR-2r7iU.ttf');
+        } 
+        h1,h2,h3,h4,h5,h6,blockquote p {
+          font-family: "Varela Round";
+        }
+      </style>
+          <style type="text/css" id="body_font" media="screen">
+        @font-face {
+          font-family: "Varela Round";
+          src: url('//themes.googleusercontent.com/static/fonts/varelaround/v3/APH4jr0uSos5wiut5cpjri3USBnSvpkopQaUR-2r7iU.ttf');
+        } 
+        body,.entry-content,.page-content,.site-description,.entry-meta .byline, .entry-meta .cat-links, .format-link .entry-content a {
+          font-family: "Varela Round";
+        }
+      </style>
+        <style type="text/css" id="article_font-size" media="screen">
+        .entry-content, .page-content {
+          font-size: 14px;
+        }
+      </style>
+    <meta property="og:image" content="https://kodejava.org/wp-content/uploads/2017/01/icon.png">			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How do I create port scanner program?">
+<meta property="og:url" content="https://kodejava.org/how-do-i-create-port-scanner-program/">
+<meta property="og:description" content="In this example you’ll see how to create a simple port scanner program to check the open ports for the specified host name. package org.kodejava.example.network; import java.io.IOException; i…">
+<meta property="article:published_time" content="2010-06-12T19:59:49+00:00">
+<meta property="article:modified_time" content="2019-07-06T11:41:11+00:00">
+<meta property="og:site_name" content="Kode Java">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@kodejava">
+<meta name="twitter:text:title" content="How do I create port scanner program?">
+<meta name="twitter:image" content="https://i1.wp.com/kodejava.org/wp-content/uploads/2017/01/cropped-icon.png?fit=240%2C240&amp;ssl=1">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://kodejava.org/wp-content/uploads/2017/01/icon.png">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="icon" href="https://i1.wp.com/kodejava.org/wp-content/uploads/2017/01/cropped-icon.png?fit=32%2C32&amp;ssl=1" sizes="32x32">
+<link rel="icon" href="https://i1.wp.com/kodejava.org/wp-content/uploads/2017/01/cropped-icon.png?fit=192%2C192&amp;ssl=1" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://i1.wp.com/kodejava.org/wp-content/uploads/2017/01/cropped-icon.png?fit=180%2C180&amp;ssl=1">
+<meta name="msapplication-TileImage" content="https://i1.wp.com/kodejava.org/wp-content/uploads/2017/01/cropped-icon.png?fit=270%2C270&amp;ssl=1">
+<!-- Google Analytics Tracking by Google Analyticator 6.5.4: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">window.google_analytics_uacct = "pub-4427995640407580";</script>
+<script type="text/javascript">
+    var analyticsFileTypes = [''];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43172068-1', 'auto');
+ 
+	ga('send', 'pageview');
+	setTimeout("ga('send','event','Engaged users','More than 30 seconds')",30000);
+</script>
+			<style type="text/css" id="wp-custom-css">
+				/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/
+code {
+	font-family: Consolas, Menlo, Monaco, Monoid;
+}
+
+code {
+    padding: 3px 3px;
+    font-size: 14px;
+    font-family: Consolas, Menlo, Monaco, Monoid;
+    color: #666666;
+    border: none;
+	  background: #fff;
+}
+
+pre {
+    padding: 5px;
+    font-size: 13px;
+    font-family: Consolas, Menlo, Monaco, Monoid;
+    background: #fdfdfd;
+    overflow: auto;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    white-space: pre;
+}
+
+pre code {
+    font-size: 13px;
+    font-family: Consolas, Menlo, Monaco, Monoid;
+    overflow: auto;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    white-space: pre;
+    line-height: 20px;
+	  background: #fafafa;
+}
+
+.hljs {
+}
+
+p {
+    margin: 0 0 20px 0;
+}
+
+div.entry-content {
+    text-align: left;
+}
+
+.jp-relatedposts {
+    text-align: left;
+}
+ 
+.pager .pager-title {
+    font-family: 'Varela Round';
+}
+
+.comment-list .fn {
+    font-family: 'Varela Round';
+}
+
+.widget_recent_comments li {
+    font-size: 15px;
+}
+
+.widget_recent_entries li {
+    font-size: 15px;
+}
+
+.bsap_1298078 {
+    margin: 0 auto;
+}
+
+.pager .nav-next a:hover .btn,
+.pager .nav-previous a:hover .btn {
+  background: #3b5998;
+}
+
+/*
+#content {
+	margin-left: -10px;
+	width: 640px;
+}
+
+.page-header {
+  margin: 0 -10px 30px -10px;
+}
+*/
+
+.language-text {
+    display: block;
+    background: white;
+    padding: 0.5em;
+    color: #333333;
+    overflow-x: auto;
+}
+
+kbd {
+    display: inline-block;
+    margin: 0 .1em;
+    padding: .1em .6em;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 11px;
+	  font-weight: bold;
+    line-height: 1.4;
+    color: #242729;
+    text-shadow: 0 1px 0 #FFF;
+    background-color: #e1e3e5;
+    border: 1px solid #adb3b9;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.2), 0 0 0 2px #FFF inset;
+    white-space: nowrap;
+}			</style>
+		<script type="text/javascript" async="" src="./How do I create port scanner program_ _ Kode Java_files/a.min.js.download"></script><script type="text/javascript" async="" src="./How do I create port scanner program_ _ Kode Java_files/a.min.js(1).download"></script></head>
+<body class="post-template-default single single-post postid-651 single-format-standard group-blog">
+<div id="page" class="hfeed site">
+	<div class="container clearfix">
+				<div id="navigation" class="site-nav" style="display: block;">
+			<div class="site-nav-inner">
+				<div class="container">
+					<header id="masthead" class="site-header" role="banner">
+						<h1 class="site-title display-logo"><a href="https://kodejava.org/" title="Kode Java" rel="home"><img alt="Kode Java" src="./How do I create port scanner program_ _ Kode Java_files/kodejava.png"></a></h1><p class="site-subtitle text-center">Learn Java by Examples</p>					</header>
+					<div id="main-sidebar" class="widget-area q2w3-fixed-widget-container" role="complementary" style="height: 547px;">
+		<aside id="dw_accordions-6" class="widget dw_accordion news-accordion"><div class="accordion" id="accordion-dw_accordions-6">                        <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-1">Java</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-1" class="widget_nav_menu-dw-widget-1  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Java</h3><div class="menu-java-se-api-menu-container"><ul id="menu-java-se-api-menu" class="menu"><li id="menu-item-6114" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-6114"><a href="https://kodejava.org/category/java/">Java</a>
+<ul class="sub-menu">
+	<li id="menu-item-6933" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-6933"><a href="https://kodejava.org/category/java/core-api/">Core API</a></li>
+	<li id="menu-item-5325" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5325"><a href="https://kodejava.org/category/java/date-and-time-api/">Date Time</a></li>
+	<li id="menu-item-5304" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5304"><a href="https://kodejava.org/category/java/java-concurrency-utilities/">Concurrency</a></li>
+	<li id="menu-item-5307" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5307"><a href="https://kodejava.org/category/java/java-logging/">Logging</a></li>
+	<li id="menu-item-5309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5309"><a href="https://kodejava.org/category/java/java-zip-and-gzip/">Zip and GZIP</a></li>
+	<li id="menu-item-5311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5311"><a href="https://kodejava.org/category/java/reflection-api/">Reflection</a></li>
+	<li id="menu-item-5312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5312"><a href="https://kodejava.org/category/java/regular-expressions/">Regex</a></li>
+	<li id="menu-item-5315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5315"><a href="https://kodejava.org/category/java/jdbc-api/">JDBC</a></li>
+	<li id="menu-item-5314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5314"><a href="https://kodejava.org/category/java/java-scripting/">Scripting</a></li>
+	<li id="menu-item-5319" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5319"><a href="https://kodejava.org/category/java/java-beans/">Beans</a></li>
+	<li id="menu-item-6208" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6208"><a href="https://kodejava.org/category/java/java-mail/">Mail</a></li>
+	<li id="menu-item-5321" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5321"><a href="https://kodejava.org/category/java/java-security/">Security</a></li>
+	<li id="menu-item-5324" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5324"><a href="https://kodejava.org/category/java/java-xml/">XML</a></li>
+	<li id="menu-item-5331" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5331"><a href="https://kodejava.org/category/java/java-swing/">Swing</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-6">Spring</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-6" class="widget_nav_menu-dw-widget-6  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Spring</h3><div class="menu-spring-menu-container"><ul id="menu-spring-menu" class="menu"><li id="menu-item-6116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6116"><a href="https://kodejava.org/category/spring/">Spring</a>
+<ul class="sub-menu">
+	<li id="menu-item-6117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6117"><a href="https://kodejava.org/category/spring/spring-core/">Spring Core</a></li>
+	<li id="menu-item-6118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6118"><a href="https://kodejava.org/category/spring/spring-jdbc/">Spring JDBC</a></li>
+	<li id="menu-item-7976" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7976"><a href="https://kodejava.org/category/spring/spring-boot/">Spring Boot</a></li>
+	<li id="menu-item-7977" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7977"><a href="https://kodejava.org/category/spring/spring-mvc/">Spring MVC</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-7">Persistence</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-7" class="widget_nav_menu-dw-widget-7  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Persistence</h3><div class="menu-persistence-menu-container"><ul id="menu-persistence-menu" class="menu"><li id="menu-item-6120" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6120"><a href="https://kodejava.org/category/persistence/">Persistence</a>
+<ul class="sub-menu">
+	<li id="menu-item-6121" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6121"><a href="https://kodejava.org/category/persistence/jpa/">JPA</a></li>
+	<li id="menu-item-6119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6119"><a href="https://kodejava.org/category/persistence/hibernate/">Hibernate</a></li>
+	<li id="menu-item-6131" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6131"><a href="https://kodejava.org/category/frameworks/mybatis/">MyBatis</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-8">Servlet</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-8" class="widget_nav_menu-dw-widget-8  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Servlet</h3><div class="menu-servlet-menu-container"><ul id="menu-servlet-menu" class="menu"><li id="menu-item-6122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6122"><a href="https://kodejava.org/category/java/servlet/">Servlet</a>
+<ul class="sub-menu">
+	<li id="menu-item-6125" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6125"><a href="https://kodejava.org/category/java/servlet/">Servlet</a></li>
+	<li id="menu-item-6123" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6123"><a href="https://kodejava.org/category/java/servlet/jsp/">JSP</a></li>
+	<li id="menu-item-6124" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6124"><a href="https://kodejava.org/category/java/servlet/taglib/">Taglib</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-3">Other Libraries</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-3" class="widget_nav_menu-dw-widget-3  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Other Libraries</h3><div class="menu-other-libraries-menu-container"><ul id="menu-other-libraries-menu" class="menu"><li id="menu-item-5360" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5360"><a href="https://kodejava.org/category/other-libraries/">Other Libraries</a>
+<ul class="sub-menu">
+	<li id="menu-item-6991" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6991"><a href="https://kodejava.org/category/other-libraries/apache-commons/">Apache Commons</a></li>
+	<li id="menu-item-5350" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5350"><a href="https://kodejava.org/category/other-libraries/apache-httpcomponents/">Apache HttpComponents</a></li>
+	<li id="menu-item-5351" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5351"><a href="https://kodejava.org/category/other-libraries/apache-poi/">Apache POI</a></li>
+	<li id="menu-item-5364" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5364"><a href="https://kodejava.org/category/other-libraries/google-gson/">Google Gson</a></li>
+	<li id="menu-item-7528" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7528"><a href="https://kodejava.org/category/other-libraries/jackson/">Jackson</a></li>
+	<li id="menu-item-7570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7570"><a href="https://kodejava.org/category/other-libraries/json-java/">JSON-Java</a></li>
+	<li id="menu-item-5365" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5365"><a href="https://kodejava.org/category/other-libraries/itext-pdf/">iText PDF</a></li>
+	<li id="menu-item-5366" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5366"><a href="https://kodejava.org/category/other-libraries/jasypt/">Jasypt</a></li>
+	<li id="menu-item-5361" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5361"><a href="https://kodejava.org/category/other-libraries/jdom/">JDOM</a></li>
+	<li id="menu-item-5362" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5362"><a href="https://kodejava.org/category/other-libraries/joda-time/">Joda-Time</a></li>
+	<li id="menu-item-5363" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5363"><a href="https://kodejava.org/category/other-libraries/jpos/">jPOS</a></li>
+	<li id="menu-item-7978" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7978"><a href="https://kodejava.org/category/other-libraries/project-lombok/">Project Lombok</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-5">Patterns</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-5" class="widget_nav_menu-dw-widget-5  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Patterns</h3><div class="menu-design-pattern-menu-container"><ul id="menu-design-pattern-menu" class="menu"><li id="menu-item-5367" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5367"><a href="https://kodejava.org/category/patterns/">Patterns</a>
+<ul class="sub-menu">
+	<li id="menu-item-5368" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5368"><a href="https://kodejava.org/category/patterns/creational-patterns/">Creational Patterns</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-4">Databases</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-4" class="widget_nav_menu-dw-widget-4  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Databases</h3><div class="menu-databases-menu-container"><ul id="menu-databases-menu" class="menu"><li id="menu-item-5376" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5376"><a href="https://kodejava.org/category/databases/">Databases</a>
+<ul class="sub-menu">
+	<li id="menu-item-8192" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8192"><a href="https://kodejava.org/category/databases/mysql/">MySQL</a></li>
+	<li id="menu-item-5377" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5377"><a href="https://kodejava.org/category/databases/mongodb/">MongoDB</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-9">JVM Languages</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-9" class="widget_nav_menu-dw-widget-9  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">JVM Languages</h3><div class="menu-jvm-languages-menu-container"><ul id="menu-jvm-languages-menu" class="menu"><li id="menu-item-7260" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7260"><a href="https://kodejava.org/category/jvm-languages/">JVM Languages</a>
+<ul class="sub-menu">
+	<li id="menu-item-7261" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7261"><a href="https://kodejava.org/category/jvm-languages/kotlin/">Kotlin</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+                                  <div class="accordion-group">
+              <div class="accordion-heading"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-dw_accordions-6" href="https://kodejava.org/how-do-i-create-port-scanner-program/#dw_accordions-6-nav_menu-dw-widget-2">Tools</a></div>
+              <div id="dw_accordions-6-nav_menu-dw-widget-2" class="widget_nav_menu-dw-widget-2  accordion-body collapse  widget_nav_menu">
+                <div class="accordion-inner">
+                <h3 class="widget-title">Tools</h3><div class="menu-ide-tools-menu-container"><ul id="menu-ide-tools-menu" class="menu"><li id="menu-item-5375" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5375"><a href="https://kodejava.org/category/tools/">Tools</a>
+<ul class="sub-menu">
+	<li id="menu-item-5371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5371"><a href="https://kodejava.org/category/tools/intellij-idea/">IntelliJ IDEA</a></li>
+	<li id="menu-item-5379" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5379"><a href="https://kodejava.org/category/tools/gradle/">Gradle</a></li>
+	<li id="menu-item-5372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5372"><a href="https://kodejava.org/category/tools/junit/">JUnit</a></li>
+	<li id="menu-item-5373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5373"><a href="https://kodejava.org/category/tools/maven/">Maven</a></li>
+	<li id="menu-item-5381" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5381"><a href="https://kodejava.org/category/tools/os-x/">OS X</a></li>
+	<li id="menu-item-5378" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5378"><a href="https://kodejava.org/category/tools/ubuntu/">Ubuntu</a></li>
+	<li id="menu-item-5374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5374"><a href="https://kodejava.org/category/tools/uml/">UML</a></li>
+</ul>
+</li>
+</ul></div>                </div>
+              </div>
+            </div>
+          </div></aside><aside id="custom_html-7" class="widget_text widget widget_custom_html" style=""><div class="textwidget custom-html-widget"><div style="width: 160px; margin: 0 auto 0 auto">
+	<div data-type="ad" data-publisher="site.kodejava.lqm" data-format="160x600" data-zone="ros" data-tags="Java, Java EE, Cloud, Spring, Hibernate, JPA, Servlet, Android, Swing"></div>
+</div></div></aside></div>				</div>
+			</div>
+		</div>
+          <div id="actions" class="site-actions clearfix">
+      <div class="action show-site-nav">
+          <i class="icon-reorder"></i>
+      </div>
+      <div class="clearfix actions">
+          <div class="action search">
+              <form action="https://kodejava.org/" class="action searchform">
+                  <input type="text" placeholder="Search" id="s" name="s" class="search-query">
+                  <label for="s"></label>
+              </form>
+          </div>
+          <a class="back-top action" href="https://kodejava.org/how-do-i-create-port-scanner-program/#page"><i class="icon-chevron-up"></i></a>
+                    <div class="action socials">
+              <i class="icon-link active-socials"></i>
+              <ul class="unstyled list-socials clearfix" style="width: 240px;">
+                  <li class="social"><a href="https://facebook.com/kodejava"><i class="icon-facebook"></i></a></li>                  <li class="social"><a href="https://twitter.com/kodejava"><i class="icon-twitter"></i></a></li>                                                                        <li class="social"><a href="https://github.com/kodejava"><i class="icon-github"></i></a></li>              </ul>          </div>
+      </div>
+  </div>
+  		<div id="main" class="site-main" style="min-height: 833px;">
+			<div class="site-main-inner">
+				<div class="container clearfix">
+					<div id="primary" class="content-area">
+	<div class="primary-inner">
+		<div id="content" class="site-content" role="main">
+		<article id="post-651" class="post-651 post type-post status-publish format-standard hentry category-core-api category-java-networking tag-inetaddress tag-port tag-scanner tag-socket">
+	<header class="entry-header">
+		<h1 class="entry-title">How do I create port scanner program?</h1>		<div class="entry-meta"><span class="byline">By <span class="author vcard"><a class="url fn n" href="https://kodejava.org/author/wsaryada/" title="View all posts by Wayan Saryada">Wayan Saryada</a></span></span><span class="cat-links"> in <a href="https://kodejava.org/category/java/core-api/" rel="category tag">Core API</a>, <a href="https://kodejava.org/category/java/java-networking/" rel="category tag">Networking</a></span><span class="sep"><span class="post-format"><i class="icon-file-text"></i></span></span><span class="posted-on"><a href="https://kodejava.org/how-do-i-create-port-scanner-program/" title="3:59 am" rel="bookmark"><i class="icon-calendar-empty"></i> <time class="entry-date last-modified" datetime="2019-07-06T19:41:11+08:00">Last modified: July 6, 2019</time></a></span>		<span class="comments-link"><a href="https://kodejava.org/how-do-i-create-port-scanner-program/#respond"><i class="icon-comment-alt"></i> 0 Comment</a></span>
+	</div>	</header>
+
+			<div class="entry-content">
+		<p>In this example you’ll see how to create a simple port scanner program to check the open ports for the specified host name.</p>
+<pre><code class="language-java hljs"><span class="hljs-keyword">package</span> org.kodejava.example.network;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.InetAddress;
+<span class="hljs-keyword">import</span> java.net.Socket;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PortScanner</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        String host = <span class="hljs-string">"localhost"</span>;
+        InetAddress inetAddress = InetAddress.getByName(host);
+
+        String hostName = inetAddress.getHostName();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> port = <span class="hljs-number">0</span>; port &lt;= <span class="hljs-number">65535</span>; port++) {
+            <span class="hljs-keyword">try</span> {
+                Socket socket = <span class="hljs-keyword">new</span> Socket(hostName, port);
+                String text = hostName + <span class="hljs-string">" is listening on port "</span> + port;
+                System.out.println(text);
+                socket.close();
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                <span class="hljs-comment">// empty catch block</span>
+            }
+        }
+    }
+}
+</code></pre>
+<p>The result of the code snippet above are:</p>
+<pre><code class="language-text">localhost is listening on port 53
+localhost is listening on port 80
+localhost is listening on port 443
+localhost is listening on port 631
+localhost is listening on port 1099
+localhost is listening on port 3306
+localhost is listening on port 4380
+localhost is listening on port 6942
+localhost is listening on port 8005
+localhost is listening on port 8009
+localhost is listening on port 8021
+localhost is listening on port 8080
+...
+</code></pre>
+
+                         <div class="abh_box abh_box_down abh_box_minimal"><ul class="abh_tabs"> <li class="abh_about abh_active"><a href="https://kodejava.org/how-do-i-create-port-scanner-program/#abh_about">About</a></li> <li class="abh_posts"><a href="https://kodejava.org/how-do-i-create-port-scanner-program/#abh_posts">Latest Posts</a></li></ul><div class="abh_tab_content"><section class="vcard abh_about_tab abh_tab" style="display:block"><div class="abh_image"><a href="https://kodejava.org/" class="url" target="_blank" title="Wayan Saryada" rel="nofollow"> <img alt="" src="./How do I create port scanner program_ _ Kode Java_files/a7ba7c3cbedbda46815772f3d65c42a1.jpeg" class="avatar avatar-250 photo jetpack-lazy-image jetpack-lazy-image--handled" height="250" width="250" srcset="https://secure.gravatar.com/avatar/a7ba7c3cbedbda46815772f3d65c42a1?s=500&amp;d=mm&amp;r=g 2x" data-lazy-loaded="1"><noscript><img alt='' src='https://secure.gravatar.com/avatar/a7ba7c3cbedbda46815772f3d65c42a1?s=250&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a7ba7c3cbedbda46815772f3d65c42a1?s=500&#038;d=mm&#038;r=g 2x' class='avatar avatar-250 photo' height='250' width='250' /></noscript></a> </div><div class="abh_social"> <a href="http://facebook.com/kodejava" title="Facebook" class="abh_facebook" target="_blank" rel="nofollow"></a><a href="http://twitter.com/kodejava" title="Twitter" class="abh_twitter" target="_blank" rel="nofollow"></a></div><div class="abh_text"><h3 class="fn name"><a href="https://kodejava.org/" class="url" target="_blank" rel="nofollow">Wayan Saryada</a></h3><div class="abh_job"><span class="title">Founder</span> at <span class="org"><a href="https://kodejava.org/" target="_blank">Kode Java Org</a></span></div><div class="description note abh_description">I am a programmer, a runner, a recreational diver, currently live in the island of <a href="https://en.wikipedia.org/wiki/Bali">Bali</a>, <a href="https://en.wikipedia.org/wiki/Indonesia">Indonesia</a>. Mostly programming in Java, Spring Framework, Hibernate / JPA. You can support my works by <a href="https://paypal.me/wsaryada/1.99">donating here</a>. Thank you ?</div></div> </section><section class="abh_posts_tab abh_tab"><div class="abh_image"><a href="https://kodejava.org/" class="url" target="_blank" title="Wayan Saryada" rel="nofollow"><img alt="" src="./How do I create port scanner program_ _ Kode Java_files/a7ba7c3cbedbda46815772f3d65c42a1.jpeg" class="avatar avatar-250 photo jetpack-lazy-image" height="250" width="250" data-lazy-srcset="https://secure.gravatar.com/avatar/a7ba7c3cbedbda46815772f3d65c42a1?s=500&amp;d=mm&amp;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/a7ba7c3cbedbda46815772f3d65c42a1?s=250&amp;is-pending-load=1#038;d=mm&amp;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/a7ba7c3cbedbda46815772f3d65c42a1?s=250&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a7ba7c3cbedbda46815772f3d65c42a1?s=500&#038;d=mm&#038;r=g 2x' class='avatar avatar-250 photo' height='250' width='250' /></noscript></a></div><div class="abh_social"> <a href="http://facebook.com/kodejava" title="Facebook" class="abh_facebook" target="_blank" rel="nofollow"></a><a href="http://twitter.com/kodejava" title="Twitter" class="abh_twitter" target="_blank" rel="nofollow"></a></div><div class="abh_text"><h4>Latest posts by Wayan Saryada <span class="abh_allposts">(<a href="https://kodejava.org/author/wsaryada/">see all</a>)</span></h4><div class="abh_description note"><ul>				<li>					<a href="https://kodejava.org/how-to-install-consolas-font-in-mac-os-x/">How to Install Consolas Font in Mac OS X?</a><span> - March 29, 2019</span>				</li>				<li>					<a href="https://kodejava.org/how-do-i-clear-the-current-command-line-in-terminal/">How do I clear the current command line in terminal?</a><span> - February 14, 2019</span>				</li>				<li>					<a href="https://kodejava.org/how-do-i-generate-random-alphanumeric-strings/">How do I generate random alphanumeric strings?</a><span> - February 7, 2019</span>				</li></ul></div></div> </section></div> </div><div class="post-views post-651 entry-meta">
+			<span class="post-views-icon dashicons dashicons-palmtree"></span>
+			<span class="post-views-label">Views: </span>
+			<span class="post-views-count">2,315</span>
+			</div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-651" class="share-facebook sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-651" class="share-twitter sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-651" class="share-linkedin sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=reddit&amp;nb=1" target="_blank" title="Click to share on Reddit"><span></span><span class="sharing-screen-reader-text">Click to share on Reddit (Opens in new window)</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=telegram&amp;nb=1" target="_blank" title="Click to share on Telegram"><span></span><span class="sharing-screen-reader-text">Click to share on Telegram (Opens in new window)</span></a></li><li class="share-jetpack-whatsapp"><a rel="nofollow noopener noreferrer" data-shared="" class="share-jetpack-whatsapp sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=jetpack-whatsapp&amp;nb=1" target="_blank" title="Click to share on WhatsApp"><span></span><span class="sharing-screen-reader-text">Click to share on WhatsApp (Opens in new window)</span></a></li><li class="share-skype"><a rel="nofollow noopener noreferrer" data-shared="sharing-skype-651" class="share-skype sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=skype&amp;nb=1" target="_blank" title="Click to share on Skype"><span></span><span class="sharing-screen-reader-text">Click to share on Skype (Opens in new window)</span></a></li><li class="share-email share-service-visible"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon no-text" href="https://kodejava.org/how-do-i-create-port-scanner-program/?share=email&amp;nb=1" target="_blank" title="Click to email this to a friend"><span></span><span class="sharing-screen-reader-text">Click to email this to a friend (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-120714166-651-5d779aaa1f2ad" data-src="https://widgets.wp.com/likes/#blog_id=120714166&amp;post_id=651&amp;origin=kodejava.org&amp;obj_id=120714166-651-5d779aaa1f2ad" data-name="like-post-frame-120714166-651-5d779aaa1f2ad"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe name="like-post-frame-120714166-651-5d779aaa1f2ad" src="./How do I create port scanner program_ _ Kode Java_files/saved_resource(5).html" height="55px" width="100%" frameborder="0" scrolling="no" style="width: 603px; height: 55px;"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid "><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="216" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://kodejava.org/how-do-i-create-a-client-server-socket-communication/" title="How do I create a client-server socket communication?
+
+In this example you&#39;ll see how to create a client-server socket communication. The example below consist of two main classes, the ServerSocketExample and the ClientSocketExample. The server application listen to port 7777 at the localhost. When we send a message from the client application the server receive the message and…" rel="nofollow" data-origin="651" data-position="0">How do I create a client-server socket communication?</a></span><span class="jp-relatedposts-post-context">In "Core API"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="65" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://kodejava.org/how-do-i-get-a-localhost-hostname/" title="How do I get a localhost hostname?
+
+package org.kodejava.example.network; import java.net.InetAddress; import java.net.UnknownHostException; public class HostNameExample { public static void main(String[] args) { try { InetAddress address = InetAddress.getLocalHost(); System.out.println(&quot;Hostname: &quot; + address.getHostName()); } catch (UnknownHostException e) { e.printStackTrace(); } } }" rel="nofollow" data-origin="651" data-position="1">How do I get a localhost hostname?</a></span><span class="jp-relatedposts-post-context">In "Core API"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="648" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://kodejava.org/how-do-i-get-jdbc-driver-property-information/" title="How do I get JDBC driver property information?
+
+The example below show you how to get the information about the possible properties for the corresponding JDBC driver. package org.kodejava.example.jdbc; import java.sql.*; public class DriverPropertyInfoDemo { private static final String URL = &quot;jdbc:mysql://localhost/kodejava&quot;; public static void main(String[] args) { try { // Gets information about the possible properties for…" rel="nofollow" data-origin="651" data-position="2">How do I get JDBC driver property information?</a></span><span class="jp-relatedposts-post-context">In "JDBC"</span></p></div></div>			</div>
+	
+	<footer class="entry-footer">
+				<div class="entry-tags">
+			<span class="tags-title">Tags</span>
+			<span class="tags-links"><a href="https://kodejava.org/tag/inetaddress/" rel="tag">InetAddress</a><a href="https://kodejava.org/tag/port/" rel="tag">Port</a><a href="https://kodejava.org/tag/scanner/" rel="tag">Scanner</a><a href="https://kodejava.org/tag/socket/" rel="tag">Socket</a></span>
+		</div>
+			</footer>
+</article>				<nav role="navigation" id="nav-below" class="post-navigation pager">
+			<div class="nav-previous"><a href="https://kodejava.org/how-do-i-get-the-maximum-number-of-concurrent-connections/" rel="prev"><span class="meta-nav btn"><i class="icon-chevron-left"></i></span> <span class="pager-title">How do I get the maximum number of concurrent connections?</span></a></div>		<div class="nav-next"><a href="https://kodejava.org/how-do-i-retrieve-available-schemas-in-database/" rel="next"><span class="meta-nav btn"><i class="icon-chevron-right"></i></span><span class="pager-title">How do I retrieve available catalogs in database?</span></a></div>		</nav>
+	
+	
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply					<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://kodejava.org/how-do-i-create-port-scanner-program/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe title="Comment Form" src="./How do I create port scanner program_ _ Kode Java_files/saved_resource(6).html" style="width: 603px; height: 58px; border: 0px;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups" scrolling="no"></iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = false;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							<input id="ak_js" name="ak_js" type="hidden" value="1568119466799"></form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="">
+
+		<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p></div>		</div>
+	</div>
+</div>
+<div id="secondary" class="widget-area q2w3-fixed-widget-container" role="complementary" style="height: 284px;">
+		<aside id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="site.kodejava.lqm" data-format="300x250" data-zone="ros" data-tags="Java, Java EE, Cloud, Spring, Hibernate, JPA, Servlet, Android, Swing"></div>
+</div></aside><aside id="custom_html-8" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async="" src="./How do I create port scanner program_ _ Kode Java_files/f.txt"></script>
+<!-- Kodejava 300x250 Top Right -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4427995640407580" data-ad-slot="3186705591"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside><aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async="" src="./How do I create port scanner program_ _ Kode Java_files/f.txt"></script>
+<!-- Kodejava 300x600 Middle Right -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-4427995640407580" data-ad-slot="7867772397"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside><aside id="custom_html-4" class="widget_text widget widget_custom_html" style=""><div class="textwidget custom-html-widget"><div data-type="ad" data-publisher="site.kodejava.lqm" data-format="300x250" data-zone="ros" data-tags="Java, Java EE, Cloud, Spring, Hibernate, JPA, Servlet, Android, Swing"></div></div></aside><aside id="custom_html-5" class="widget_text widget widget_custom_html" style=""><div class="textwidget custom-html-widget"><script async="" src="./How do I create port scanner program_ _ Kode Java_files/f.txt"></script>
+<!-- Kodejava 300x250 Bottom Right -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4427995640407580" data-ad-slot="8116084799"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div>        </div>
+      </div>
+    </div>
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+          <div class="site-info">
+          <div>
+            © 2019 <a href="https://kodejava.org/" title="Kode Java" rel="home">Kode Java</a> - Made with <span class="heart" style="color: #FF007F;">♡</span> by <a href="https://kodejava.org/">Wayan Saryada</a>.
+          </div>
+        </div>
+        </div>
+    </footer>
+  </div>
+</div>
+<script defer="" src="./How do I create port scanner program_ _ Kode Java_files/all.js.download"></script>
+
+<script type="text/javascript">
+function _dmBootstrap(file) {
+    var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js'); }
+(function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000); })();
+</script>
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/kodejava.org\/how-do-i-create-port-scanner-program\/":651};
+	</script>
+					
+<link rel="stylesheet" id="hljstheme-css" href="./How do I create port scanner program_ _ Kode Java_files/idea.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/photon.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/devicepx-jetpack.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/main.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/bootstrap-transition.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/bootstrap-carousel.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/bootstrap-collapse.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/bootstrap-tab.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/eu-cookie-law.min.js.download"></script><aside id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget" style="display: block;"><div class="hide-on-button negative" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post">
+		<input type="submit" value="Close and accept" class="accept">
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br>
+To find out more, including how to control cookies, see here:
+	<a href="https://automattic.com/cookies/">
+		Cookie Policy	</a>
+</div>
+</aside>
+<script type="text/javascript">
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"sidebar-1","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["custom_html-7"]},{"sidebar":"sidebar-2","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["custom_html-4","custom_html-5"]}];
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/q2w3-fixed-widget.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/lazy-images.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/queuehandler.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/highlight.min.js.download"></script>
+<script async="async" type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/form.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/sharing.min.js.download"></script>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-telegram', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtelegram', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-skype', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomskype', 'menubar=1,resizable=1,width=305,height=665' );
+				return false;
+			});
+</script>
+    <style>code.hljs { /*margin: 5px;*/ }</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+	<iframe src="./How do I create port scanner program_ _ Kode Java_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display: none; width: 1263px; height: 632px;"></iframe>
+	<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+	
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=120714166&postid=651&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=7.7.1&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=c3cc1886c1d9c56feea1fc018aba77cc77b21e8b#parent=https%3A%2F%2Fkodejava.org%2Fhow-do-i-create-port-scanner-program%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=120714166&postid=651&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=7.7.1&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=c3cc1886c1d9c56feea1fc018aba77cc77b21e8b#parent=https%3A%2F%2Fkodejava.org%2Fhow-do-i-create-port-scanner-program%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		<script type="text/javascript" src="./How do I create port scanner program_ _ Kode Java_files/e-201937.js.download" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.7.1',blog:'120714166',post:'651',tz:'8',srv:'kodejava.org'} ]);
+	_stq.push([ 'clickTrackerInit', '120714166', '651' ]);
+</script>
+
+<div id="sharing_email" style="display: none;">
+		<form action="https://kodejava.org/how-do-i-create-port-scanner-program/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed">
+			
+			<img style="float: right; display: none" class="loading" src="./How do I create port scanner program_ _ Kode Java_files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a rel="nofollow" href="https://kodejava.org/how-do-i-create-port-scanner-program/#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div></body></html>
