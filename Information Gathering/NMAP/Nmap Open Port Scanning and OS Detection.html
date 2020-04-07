@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 9]> <html class="ie ie9" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html prefix="og: http://ogp.me/ns#" class="mozwebext" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/in.js"></script>
+
+
+<meta charset="UTF-8">
+<title>Nmap Open Port Scanning and OS Detection</title>
+
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="pingback" href="https://www.hackingtutorials.org/xmlrpc.php">
+	
+
+	
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Step-by-Step Tutorial with video on how to use Nmap network scanner in Kali Linux to scan hosts for open ports and OS Detection.">
+<link rel="canonical" href="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nmap Open Port Scanning and OS Detection">
+<meta property="og:description" content="Step-by-Step Tutorial with video on how to use Nmap network scanner in Kali Linux to scan hosts for open ports and OS Detection.">
+<meta property="og:url" content="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/">
+<meta property="og:site_name" content="Hacking Tutorials">
+<meta property="article:publisher" content="https://www.facebook.com/Hacking-Tutorials-174273529574105">
+<meta property="article:tag" content="Hacking">
+<meta property="article:tag" content="Hacking Tools">
+<meta property="article:tag" content="Kali Linux">
+<meta property="article:tag" content="Nmap">
+<meta property="article:tag" content="Open Port Scanning">
+<meta property="article:tag" content="Os Detection">
+<meta property="article:tag" content="Ping Scan">
+<meta property="article:tag" content="Port Scanning">
+<meta property="article:tag" content="SYn Scan">
+<meta property="article:tag" content="Zenmap">
+<meta property="article:section" content="Scanning Tutorials">
+<meta property="article:published_time" content="2015-05-30T12:51:30+00:00">
+<meta property="article:modified_time" content="2017-12-13T14:04:53+00:00">
+<meta property="og:updated_time" content="2017-12-13T14:04:53+00:00">
+<meta property="og:image" content="https://www.hackingtutorials.org/wp-content/uploads/2015/05/Basic-Scanning-Techniques.jpg">
+<meta property="og:image:secure_url" content="https://www.hackingtutorials.org/wp-content/uploads/2015/05/Basic-Scanning-Techniques.jpg">
+<meta property="og:image:width" content="531">
+<meta property="og:image:height" content="337">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Step-by-Step Tutorial with video on how to use Nmap network scanner in Kali Linux to scan hosts for open ports and OS Detection.">
+<meta name="twitter:title" content="Nmap Open Port Scanning and OS Detection">
+<meta name="twitter:site" content="@HackingTutors">
+<meta name="twitter:image" content="https://www.hackingtutorials.org/wp-content/uploads/2015/05/Basic-Scanning-Techniques.jpg">
+<meta name="twitter:creator" content="@HackingTutors">
+<script type="text/javascript" async="" data-pin-hover="true" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/pinit.js"></script><script id="facebook-jssdk" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/sdk.js"></script><script id="twitter-wjs" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/widgets.js"></script><script async="" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/analytics.js"></script><script type="text/javascript" async="" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/gs_async.js"></script><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.hackingtutorials.org/#organization","name":"Hacking Tutorials","url":"https://www.hackingtutorials.org/","sameAs":["https://www.facebook.com/Hacking-Tutorials-174273529574105","https://www.instagram.com/hackingtutorials/","https://www.youtube.com/channel/UCWiYDtG74wsZkEy39nCRSRw","https://pinterest.com/hackingtutorial/","https://twitter.com/HackingTutors"]},{"@type":"WebSite","@id":"https://www.hackingtutorials.org/#website","url":"https://www.hackingtutorials.org/","name":"Hacking Tutorials","publisher":{"@id":"https://www.hackingtutorials.org/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.hackingtutorials.org/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#webpage","url":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/","inLanguage":"en-US","name":"Nmap Open Port Scanning and OS Detection","isPartOf":{"@id":"https://www.hackingtutorials.org/#website"},"image":{"@type":"ImageObject","@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#primaryimage","url":"https://www.hackingtutorials.org/wp-content/uploads/2015/05/Basic-Scanning-Techniques.jpg","width":531,"height":337},"primaryImageOfPage":{"@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#primaryimage"},"datePublished":"2015-05-30T12:51:30+00:00","dateModified":"2017-12-13T14:04:53+00:00","description":"Step-by-Step Tutorial with video on how to use Nmap network scanner in Kali Linux to scan hosts for open ports and OS Detection.","breadcrumb":{"@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.hackingtutorials.org/","url":"https://www.hackingtutorials.org/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.hackingtutorials.org/category/scanning-tutorials/","url":"https://www.hackingtutorials.org/category/scanning-tutorials/","name":"Scanning Tutorials"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/","url":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/","name":"Open Port Scanning and OS Detection with Nmap in Kali Linux"}}]},{"@type":"Article","@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#article","isPartOf":{"@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#webpage"},"author":{"@id":"https://www.hackingtutorials.org/author/hacking-tutorials/#author","name":"Hacking Tutorials"},"publisher":{"@id":"https://www.hackingtutorials.org/#organization"},"headline":"Open Port Scanning and OS Detection with Nmap in Kali Linux","datePublished":"2015-05-30T12:51:30+00:00","dateModified":"2017-12-13T14:04:53+00:00","commentCount":0,"mainEntityOfPage":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#webpage","image":{"@id":"https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#primaryimage"},"keywords":"Hacking,Hacking Tools,Kali Linux,Nmap,Open Port Scanning,Os Detection,Ping Scan,Port Scanning,SYn Scan,Zenmap","articleSection":"Scanning Tutorials"},{"@type":"Person","@id":"https://www.hackingtutorials.org/author/hacking-tutorials/#author","name":"Hacking Tutorials","image":{"@type":"ImageObject","@id":"https://www.hackingtutorials.org/#personlogo","url":"https://secure.gravatar.com/avatar/650336e7d8ffcedf031b3263baf5357a?s=96&d=mm&r=g","caption":"Hacking Tutorials"},"description":"http://www.hackingtutorials.org","sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Hacking Tutorials » Feed" href="https://www.hackingtutorials.org/feed/">
+<link rel="alternate" type="application/rss+xml" title="Hacking Tutorials » Comments Feed" href="https://www.hackingtutorials.org/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Hacking Tutorials » Open Port Scanning and OS Detection with Nmap in Kali Linux Comments Feed" href="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.hackingtutorials.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=04725353f9b379006962655fc896a288"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="dlm-frontend-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="smartmag-fonts-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="smartmag-core-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="smartmag-responsive-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="pretty-photo-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/prettyPhoto.css" type="text/css" media="all">
+<link rel="stylesheet" id="smartmag-font-awesome-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="custom-css-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/a.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/social-logos.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/jquery_002.js"></script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/jquery.js"></script>
+<link rel="https://api.w.org/" href="https://www.hackingtutorials.org/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.hackingtutorials.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.hackingtutorials.org/wp-includes/wlwmanifest.xml"> 
+
+<link rel="shortlink" href="https://wp.me/p6iVdZ-3o">
+<link rel="alternate" type="application/json+oembed" href="https://www.hackingtutorials.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.hackingtutorials.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F&amp;format=xml">
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.hackingtutorials.org/?wordfence_lh=1&hid=3024D0D96314370F116E727A16318E5A');
+</script><script type="text/javascript">
+    "function"!=typeof loadGsLib&&(loadGsLib=function(){var e=document.createElement("script");
+    e.type="text/javascript",e.async=!0,e.src="https://api.at.getsocial.io/get/v1/127582/gs_async.js";
+    var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+    var GETSOCIAL_VERSION = "4.2.2";
+</script>
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<style type="text/css">img#wpstats{display:none}</style><link rel="icon" href="https://www.hackingtutorials.org/wp-content/uploads/2017/05/cropped-Twitter-Profile-2-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://www.hackingtutorials.org/wp-content/uploads/2017/05/cropped-Twitter-Profile-2-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.hackingtutorials.org/wp-content/uploads/2017/05/cropped-Twitter-Profile-2-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://www.hackingtutorials.org/wp-content/uploads/2017/05/cropped-Twitter-Profile-2-270x270.jpg">
+<script async="" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/adsbygoogle.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63350342-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<meta name="google-site-verification" content="sb1phorcnMViy_BuOnyZba5zzqDHtB4RC5f95e_uV8E">	
+<!--[if lt IE 9]>
+<script src="https://www.hackingtutorials.org/wp-content/themes/smart-mag/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<script type="text/javascript" async="" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/a"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+
+<body class="post-template-default single single-post postid-210 single-format-standard page-builder right-sidebar full has-nav-dark">
+
+<div class="main-wrap">
+
+	
+	
+	<div class="top-bar">
+
+		<div class="wrap">
+			<section class="top-bar-content cf">
+			
+								<div class="trending-ticker">
+					<span class="heading">Trending</span>
+
+					<ul>
+												
+												
+							<li class="" style="display: none;"><a href="https://www.hackingtutorials.org/scanning-tutorials/openvas-9-part-4-custom-scan-configurations/" title="Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations">Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations</a></li>
+						
+												
+							<li class="" style="display: none;"><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-with-openvas-9-scanning-the-network/" title="Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network">Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network</a></li>
+						
+												
+							<li class="" style="display: none;"><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/" title="Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning">Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning</a></li>
+						
+												
+							<li class="active" style="display: list-item;"><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-pt-1/" title="Vulnerability Scanning with OpenVAS 9 part 1: Installation &amp; Setup">Vulnerability Scanning with OpenVAS 9 part 1: Installation &amp; Setup</a></li>
+						
+												
+							<li class="" style="display: none;"><a href="https://www.hackingtutorials.org/infosec-books/the-best-hacking-books-2018/" title="The Best Hacking Books 2018">The Best Hacking Books 2018</a></li>
+						
+												
+							<li class="" style="display: none;"><a href="https://www.hackingtutorials.org/general-tutorials/hacking-tutorials-2018/" title="Hacking Tutorials 2018">Hacking Tutorials 2018</a></li>
+						
+												
+							<li class="" style="display: none;"><a href="https://www.hackingtutorials.org/scanning-tutorials/inspy-enumerating-linkedin/" title="Enumerating LinkedIn with Inspy">Enumerating LinkedIn with Inspy</a></li>
+						
+												
+							<li class="" style="display: none;"><a href="https://www.hackingtutorials.org/hacking-courses/review-certified-ethical-hacker-ceh/" title="Review: Certified Ethical Hacker (CEH) Course">Review: Certified Ethical Hacker (CEH) Course</a></li>
+						
+												
+											</ul>
+				</div>
+				
+									
+					
+		<div class="search">
+			<form role="search" action="https://www.hackingtutorials.org/" method="get">
+				<input type="text" name="s" class="query live-search-query" placeholder="Search..." autocomplete="off">
+				<button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+			</form>
+		</div> <!-- .search -->					
+				
+							<div class="textwidget"><ul class="social-icons cf"> <li><a href="https://www.facebook.com/Hacking-Tutorials-174273529574105" class="icon fa fa-facebook" data-original-title="Facebook"><span class="visuallyhidden">Facebook</span></a></li>
+	<li><a href="https://twitter.com/HackingTutors" class="icon fa fa-twitter" data-original-title="Twitter"><span class="visuallyhidden">Twitter</span></a></li>
+	<li><a href="https://www.google.com/+HackingtutorialsOrg2015" class="icon fa fa-google-plus" data-original-title="Google+"><span class="visuallyhidden">Google+</span></a></li>
+<li><a href="https://www.youtube.com/channel/UCWiYDtG74wsZkEy39nCRSRw" class="icon fa fa-youtube" data-original-title="Youtube"><span class="visuallyhidden">Youtube</span></a></li>
+<li><a href="https://www.tumblr.com/blog/hackingtutorials" class="icon fa fa-tumblr" data-original-title="Tumblr"><span class="visuallyhidden">Tumblr</span></a></li>
+<li><a href="https://www.instagram.com/hackingtutorials/" class="icon fa fa-instagram" data-original-title="Instagram"><span class="visuallyhidden">Instagram</span></a></li>
+<li><a href="https://pinterest.com/hackingtutorial/" class="icon fa fa-pinterest" data-original-title="Pinterest"><span class="visuallyhidden">Pinterest</span></a></li>
+
+</ul></div>
+						
+			</section>
+		</div>
+		
+	</div>
+	
+	<div id="main-head" class="main-head">
+		
+		<div class="wrap">
+			
+			
+			<header class="default">
+			
+				<div class="title">
+							<a href="https://www.hackingtutorials.org/" title="Hacking Tutorials" rel="home" class"="">
+		
+							Hacking Tutorials						
+		</a>				</div>
+				
+									
+					<div class="right">
+					
+				
+					
+			<div class="a-widget">
+			
+				<!-- Hackingtutorials.org - Leaderboard - RES -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2195678332656815" data-ad-slot="1186828480" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>			
+			</div>
+		
+				
+							</div>
+					
+								
+			</header>
+				
+							
+				
+<div class="navigation-wrap cf">
+
+	<nav class="navigation cf nav-dark">
+	
+		<div class="">
+		
+			<div class="mobile" data-type="classic" data-search="1">
+				<a href="#" class="selected">
+					<span class="text">Navigate</span><span class="current"></span> <i class="hamburger fa fa-bars"></i>
+				<div class="search">
+			<form role="search" action="https://www.hackingtutorials.org/" method="get">
+				<input type="text" name="s" class="query live-search-query" placeholder="Search..." autocomplete="off">
+				<button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+			</form>
+		</div></a>
+			</div>
+			
+			<div class="menu-magazine-container"><ul id="menu-magazine" class="menu"><li id="menu-item-46" class="home menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-46"><a href="https://www.hackingtutorials.org/">Home</a></li>
+<li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="https://www.hackingtutorials.org/about-hacking-tutorials/">About Us</a></li>
+<li id="menu-item-85" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-6 menu-item-85"><a href="https://www.hackingtutorials.org/category/general-tutorials/">General</a></li>
+<li id="menu-item-86" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-7 menu-item-86"><a href="https://www.hackingtutorials.org/category/wifi-hacking-tutorials/">Wireless</a></li>
+<li id="menu-item-87" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-5 menu-item-87"><a href="https://www.hackingtutorials.org/category/web-application-hacking/">Web</a></li>
+<li id="menu-item-153" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-cat-11 menu-item-153"><a href="https://www.hackingtutorials.org/category/scanning-tutorials/">Scanning</a></li>
+<li id="menu-item-409" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-9 menu-item-409"><a href="https://www.hackingtutorials.org/category/metasploit-tutorials/">Metasploit</a></li>
+<li id="menu-item-1395" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-cat-108 menu-item-1395"><a href="https://www.hackingtutorials.org/category/hacking-courses/">Hacking Courses</a>
+<ul class="sub-menu">
+	<li id="menu-item-1422" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1422"><a href="https://www.hackingtutorials.org/hacking-courses/offensive-security-certified-professional-oscp/">OSCP</a></li>
+	<li id="menu-item-1870" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1870"><a href="https://www.hackingtutorials.org/hacking-courses/virtual-hacking-labs/">The Virtual Hacking Labs</a></li>
+	<li id="menu-item-2179" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2179"><a href="https://www.hackingtutorials.org/hacking-courses/review-certified-ethical-hacker-ceh/">Certified Ethical Hacker (CEH)</a></li>
+	<li id="menu-item-1903" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-144 menu-item-1903"><a href="https://www.hackingtutorials.org/category/infosec-books/">Hacking Books</a></li>
+</ul>
+</li>
+<li id="menu-item-1394" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1394"><a href="#">More</a>
+<ul class="sub-menu">
+	<li id="menu-item-1554" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-116 menu-item-1554"><a href="https://www.hackingtutorials.org/category/exploit-tutorials/">Exploit tutorials</a></li>
+	<li id="menu-item-1501" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-115 menu-item-1501"><a href="https://www.hackingtutorials.org/category/networking/">Networking</a></li>
+	<li id="menu-item-553" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-60 menu-item-553"><a href="https://www.hackingtutorials.org/category/malware-analysis-tutorials/">Malware Analysis</a></li>
+	<li id="menu-item-1467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1467"><a href="https://www.hackingtutorials.org/tag/metasploitable-2/">Hacking Metasploitable 2/3</a></li>
+	<li id="menu-item-1648" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-126 menu-item-1648"><a href="https://www.hackingtutorials.org/category/digital-forensics/">Digital Forensics</a></li>
+</ul>
+</li>
+<li id="menu-item-1303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1303"><a href="https://www.hackingtutorials.org/contact/">Contact</a></li>
+</ul></div>			
+						
+				<div class="mobile-menu-container"><ul id="menu-magazine-1" class="menu mobile-menu"><li class="home menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-46"><a href="https://www.hackingtutorials.org/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="https://www.hackingtutorials.org/about-hacking-tutorials/">About Us</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-6 menu-item-85"><a href="https://www.hackingtutorials.org/category/general-tutorials/">General</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-7 menu-item-86"><a href="https://www.hackingtutorials.org/category/wifi-hacking-tutorials/">Wireless</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-5 menu-item-87"><a href="https://www.hackingtutorials.org/category/web-application-hacking/">Web</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-cat-11 menu-item-153"><a href="https://www.hackingtutorials.org/category/scanning-tutorials/">Scanning</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-9 menu-item-409"><a href="https://www.hackingtutorials.org/category/metasploit-tutorials/">Metasploit</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-cat-108 menu-item-1395"><a href="https://www.hackingtutorials.org/category/hacking-courses/">Hacking Courses<a href="#" class="chevron"><i class="fa fa-angle-down"></i></a></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1422"><a href="https://www.hackingtutorials.org/hacking-courses/offensive-security-certified-professional-oscp/">OSCP</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1870"><a href="https://www.hackingtutorials.org/hacking-courses/virtual-hacking-labs/">The Virtual Hacking Labs</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2179"><a href="https://www.hackingtutorials.org/hacking-courses/review-certified-ethical-hacker-ceh/">Certified Ethical Hacker (CEH)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-144 menu-item-1903"><a href="https://www.hackingtutorials.org/category/infosec-books/">Hacking Books</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1394"><a href="#">More<a href="#" class="chevron"><i class="fa fa-angle-down"></i></a></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-116 menu-item-1554"><a href="https://www.hackingtutorials.org/category/exploit-tutorials/">Exploit tutorials</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-115 menu-item-1501"><a href="https://www.hackingtutorials.org/category/networking/">Networking</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-60 menu-item-553"><a href="https://www.hackingtutorials.org/category/malware-analysis-tutorials/">Malware Analysis</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1467"><a href="https://www.hackingtutorials.org/tag/metasploitable-2/">Hacking Metasploitable 2/3</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-126 menu-item-1648"><a href="https://www.hackingtutorials.org/category/digital-forensics/">Digital Forensics</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1303"><a href="https://www.hackingtutorials.org/contact/">Contact</a></li>
+</ul></div>			
+				
+		</div>
+		
+	</nav>
+
+		
+</div>				
+							
+		</div>
+		
+				
+	</div>	
+	<div class="breadcrumbs-wrap">
+		
+		<div class="wrap">
+		<div class="breadcrumbs"><span class="location">You are at:</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://www.hackingtutorials.org/"><span itemprop="title">Home</span></a></span><span class="delim">»</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://www.hackingtutorials.org/category/scanning-tutorials/"><span itemprop="title">Scanning Tutorials</span></a></span><span class="delim">»</span><span class="current">Open Port Scanning and OS Detection with Nmap in Kali Linux</span></div>		</div>
+		
+	</div>
+
+
+<div class="main wrap cf">
+
+		
+	<div class="row">
+	
+		<div class="col-8 main-content">
+		
+				
+				
+<article id="post-210" class="post-210 post type-post status-publish format-standard has-post-thumbnail category-scanning-tutorials tag-hacking tag-hacking-tools tag-kali-linux tag-nmap tag-open-port-scanning tag-os-detection tag-ping-scan tag-port-scanning tag-syn-scan tag-zenmap" itemscope="" itemtype="http://schema.org/Article">
+	
+	<header class="post-header cf">
+	
+			
+
+			<div class="featured">
+						
+							
+				<a href="https://www.hackingtutorials.org/wp-content/uploads/2015/05/Basic-Scanning-Techniques.jpg" title="Open Port Scanning and OS Detection with Nmap in Kali Linux" itemprop="image" rel="prettyPhoto">
+				
+								
+										
+						<img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Basic-Scanning-Techniques.jpg" class="attachment-main-slider size-main-slider wp-post-image no-display appear" alt="" title="Open Port Scanning and OS Detection with Nmap in Kali Linux" width="529" height="336">					
+										
+												
+				</a>
+								
+								
+					</div>
+		
+		
+				<div class="heading cf">
+				
+			<h1 class="post-title item fn" itemprop="name headline">
+			Open Port Scanning and OS Detection with Nmap in Kali Linux			</h1>
+			
+			<a href="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#respond" class="comments"><i class="fa fa-comments-o"></i> 0</a>
+		
+		</div>
+
+		<div class="post-meta cf">
+			<span class="posted-by">By 
+				<span class="reviewer" itemprop="author"><a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span>
+			</span>
+			 
+			<span class="posted-on">on				<span class="dtreviewed">
+					<time class="value-title" datetime="2015-05-30T14:51:30+01:00" title="2015-05-30" itemprop="datePublished">May 30, 2015</time>
+				</span>
+			</span>
+			
+			<span class="cats"><a href="https://www.hackingtutorials.org/category/scanning-tutorials/" rel="category tag">Scanning Tutorials</a></span>
+				
+		</div>		
+			
+	</header><!-- .post-header -->
+
+	
+
+	<div class="post-container cf">
+	
+		<div class="post-content-right">
+			<div class="post-content description " itemprop="articleBody">
+	
+					
+				
+		<p>In this tutorial we are going to use <a href="https://nmap.org/" target="_blank">Nmap</a>
+ in Kali Linux to scan for&nbsp;open ports scan&nbsp;and we will be 
+using&nbsp;OS detection. Nmap stands for Network Mapper and&nbsp;is an 
+open source tool for network exploration and security auditing which 
+comes standard with Kali Linux but is also available for Windows, OSX 
+and many other UNIX platforms. Nmap also has a graphical user interface 
+called <a href="https://nmap.org/zenmap/" target="_blank">Zenmap</a>.</p>
+<p>First I want to start off with a little warning: Please be careful 
+using the more aggressive functions of Nmap against hosts you do not own
+ or do not have permission to scan. It may be against your ISP’s terms 
+to use some Nmap features.</p>
+<h2>Open Port Scanning and OS Detection</h2>
+<p>Let’s start with a ping scan on an IP range to determine live hosts using the following command:</p>
+<p><strong>nmap -sP 192.168.0.0-100</strong></p>
+<p>Next we will start a SYN scan with OS detection on one of the live hosts using the following command:</p>
+<p><strong>nmap -sS [ip address]-O</strong></p>
+<p><a href="https://www.hackingtutorials.org/wp-content/uploads/2015/05/nmap-open-port-scanning-and-os-detection-1.jpg" rel="prettyPhoto"><img class="alignnone size-full wp-image-212 no-display appear" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/nmap-open-port-scanning-and-os-detection-1.jpg" alt="nmap open port scanning and os detection 1" srcset="https://www.hackingtutorials.org/wp-content/uploads/2015/05/nmap-open-port-scanning-and-os-detection-1.jpg 790w, https://www.hackingtutorials.org/wp-content/uploads/2015/05/nmap-open-port-scanning-and-os-detection-1-300x105.jpg 300w" sizes="(max-width: 790px) 100vw, 790px" width="790" height="277"></a></p>
+<p>Now we will start an open port scan with version detection using the following command:</p>
+<p><strong>nmap -sV 192.168.0.1 -A</strong></p>
+<p><a href="https://www.hackingtutorials.org/wp-content/uploads/2015/05/nmap-open-port-scanning-and-os-detection-2.jpg" rel="prettyPhoto"><img class="alignnone size-full wp-image-213 no-display appear" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/nmap-open-port-scanning-and-os-detection-2.jpg" alt="nmap open port scanning and os detection 2" srcset="https://www.hackingtutorials.org/wp-content/uploads/2015/05/nmap-open-port-scanning-and-os-detection-2.jpg 936w, https://www.hackingtutorials.org/wp-content/uploads/2015/05/nmap-open-port-scanning-and-os-detection-2-300x101.jpg 300w" sizes="(max-width: 936px) 100vw, 936px" width="936" height="314"></a></p>
+<p>When we add -v to the command we can increase the verbosity :<br>
+<strong>nmap -sV 192.168.0.13 -A -v</strong></p>
+<div class="cfmon"> 
+<!-- Hackingtutorials.org InPost - RES -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2195678332656815" data-ad-slot="1208678084" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><h2>Nmap Open Port Scanning and OS Detection Video Tutorial</h2>
+<p><div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/DPgzordfJUM.html" allowfullscreen="" id="fitvid298929" frameborder="0"></iframe></div></p>
+<p>Thanks for watching and please subscribe to my <a href="https://www.youtube.com/channel/UCWiYDtG74wsZkEy39nCRSRw" target="_blank"><span style="color: #0066cc;">YouTube channel</span></a> :)</p>
+<h2>Nmap options summary</h2>
+<p>Usage: nmap [Scan Type(s)] [Options] {target specification}</p>
+<p>TARGET SPECIFICATION:<br>
+Can pass hostnames, IP addresses, networks, etc.<br>
+Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254<br>
+-iL &lt;inputfilename&gt;: Input from list of hosts/networks<br>
+-iR &lt;num hosts&gt;: Choose random targets<br>
+–exclude &lt;host1[,host2][,host3],…&gt;: Exclude hosts/networks<br>
+–excludefile &lt;exclude_file&gt;: Exclude list from file</p>
+<p>HOST DISCOVERY:<br>
+-sL: List Scan – simply list targets to scan<br>
+-sn: Ping Scan – disable port scan<br>
+-Pn: Treat all hosts as online — skip host discovery<br>
+-PS/PA/PU/PY[portlist]: TCP SYN/ACK, UDP or SCTP discovery to given ports<br>
+-PE/PP/PM: ICMP echo, timestamp, and netmask request discovery probes<br>
+-PO[protocol list]: IP Protocol Ping<br>
+-n/-R: Never do DNS resolution/Always resolve [default: sometimes]<br>
+–dns-servers &lt;serv1[,serv2],…&gt;: Specify custom DNS servers<br>
+–system-dns: Use OS’s DNS resolver<br>
+–traceroute: Trace hop path to each host</p>
+<p>SCAN TECHNIQUES:<br>
+-sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans<br>
+-sU: UDP Scan<br>
+-sN/sF/sX: TCP Null, FIN, and Xmas scans<br>
+–scanflags &lt;flags&gt;: Customize TCP scan flags<br>
+-sI &lt;zombie host[:probeport]&gt;: Idle scan<br>
+-sY/sZ: SCTP INIT/COOKIE-ECHO scans<br>
+-sO: IP protocol scan<br>
+-b &lt;FTP relay host&gt;: FTP bounce scan</p>
+<p>PORT SPECIFICATION AND SCAN ORDER:<br>
+-p &lt;port ranges&gt;: Only scan specified ports<br>
+Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9<br>
+–exclude-ports &lt;port ranges&gt;: Exclude the specified ports from scanning<br>
+-F: Fast mode – Scan fewer ports than the default scan<br>
+-r: Scan ports consecutively – don’t randomize<br>
+–top-ports &lt;number&gt;: Scan &lt;number&gt; most common ports<br>
+–port-ratio &lt;ratio&gt;: Scan ports more common than &lt;ratio&gt;</p>
+<p>SERVICE/VERSION DETECTION:<br>
+-sV: Probe open ports to determine service/version info<br>
+–version-intensity &lt;level&gt;: Set from 0 (light) to 9 (try all probes)<br>
+–version-light: Limit to most likely probes (intensity 2)<br>
+–version-all: Try every single probe (intensity 9)<br>
+–version-trace: Show detailed version scan activity (for debugging)</p>
+<p>SCRIPT SCAN:<br>
+-sC: equivalent to –script=default<br>
+–script=&lt;Lua scripts&gt;: &lt;Lua scripts&gt; is a comma separated list of<br>
+directories, script-files or script-categories<br>
+–script-args=&lt;n1=v1,[n2=v2,…]&gt;: provide arguments to scripts<br>
+–script-args-file=filename: provide NSE script args in a file<br>
+–script-trace: Show all data sent and received<br>
+–script-updatedb: Update the script database.<br>
+–script-help=&lt;Lua scripts&gt;: Show help about scripts.<br>
+&lt;Lua scripts&gt; is a comma-separated list of script-files or<br>
+script-categories.</p>
+<p>OS DETECTION:<br>
+-O: Enable OS detection<br>
+–osscan-limit: Limit OS detection to promising targets<br>
+–osscan-guess: Guess OS more aggressively</p>
+<p>TIMING AND PERFORMANCE:<br>
+Options which take &lt;time&gt; are in seconds, or append ‘ms’ (milliseconds),<br>
+‘s’ (seconds), ‘m’ (minutes), or ‘h’ (hours) to the value (e.g. 30m).<br>
+-T&lt;0-5&gt;: Set timing template (higher is faster)<br>
+–min-hostgroup/max-hostgroup &lt;size&gt;: Parallel host scan group sizes<br>
+–min-parallelism/max-parallelism &lt;numprobes&gt;: Probe parallelization<br>
+–min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout &lt;time&gt;: Specifies<br>
+probe round trip time.<br>
+–max-retries &lt;tries&gt;: Caps number of port scan probe retransmissions.<br>
+–host-timeout &lt;time&gt;: Give up on target after this long<br>
+–scan-delay/–max-scan-delay &lt;time&gt;: Adjust delay between probes<br>
+–min-rate &lt;number&gt;: Send packets no slower than &lt;number&gt; per second<br>
+–max-rate &lt;number&gt;: Send packets no faster than &lt;number&gt; per second</p>
+<p>FIREWALL/IDS EVASION AND SPOOFING:<br>
+-f; –mtu &lt;val&gt;: fragment packets (optionally w/given MTU)<br>
+-D &lt;decoy1,decoy2[,ME],…&gt;: Cloak a scan with decoys<br>
+-S &lt;IP_Address&gt;: Spoof source address<br>
+-e &lt;iface&gt;: Use specified interface<br>
+-g/–source-port &lt;portnum&gt;: Use given port number<br>
+–proxies &lt;url1,[url2],…&gt;: Relay connections through HTTP/SOCKS4 proxies<br>
+–data &lt;hex string&gt;: Append a custom payload to sent packets<br>
+–data-string &lt;string&gt;: Append a custom ASCII string to sent packets<br>
+–data-length &lt;num&gt;: Append random data to sent packets<br>
+–ip-options &lt;options&gt;: Send packets with specified ip options<br>
+–ttl &lt;val&gt;: Set IP time-to-live field<br>
+–spoof-mac &lt;mac address/prefix/vendor name&gt;: Spoof your MAC address<br>
+–badsum: Send packets with a bogus TCP/UDP/SCTP checksum</p>
+<p>OUTPUT:<br>
+-oN/-oX/-oS/-oG &lt;file&gt;: Output scan in normal, XML, s|&lt;rIpt kIddi3,<br>
+and Grepable format, respectively, to the given filename.<br>
+-oA &lt;basename&gt;: Output in the three major formats at once<br>
+-v: Increase verbosity level (use -vv or more for greater effect)<br>
+-d: Increase debugging level (use -dd or more for greater effect)<br>
+–reason: Display the reason a port is in a particular state<br>
+–open: Only show open (or possibly open) ports<br>
+–packet-trace: Show all packets sent and received<br>
+–iflist: Print host interfaces and routes (for debugging)<br>
+–log-errors: Log errors/warnings to the normal-format output file<br>
+–append-output: Append to rather than clobber specified output files<br>
+–resume &lt;filename&gt;: Resume an aborted scan<br>
+–stylesheet &lt;path/URL&gt;: XSL stylesheet to transform XML output to HTML<br>
+–webxml: Reference stylesheet from Nmap.Org for more portable XML<br>
+–no-stylesheet: Prevent associating of XSL stylesheet w/XML output</p>
+<p>MISC:<br>
+-6: Enable IPv6 scanning<br>
+-A: Enable OS detection, version detection, script scanning, and traceroute<br>
+–datadir &lt;dirname&gt;: Specify custom Nmap data file location<br>
+–send-eth/–send-ip: Send using raw ethernet frames or IP packets<br>
+–privileged: Assume that the user is fully privileged<br>
+–unprivileged: Assume the user lacks raw socket privileges<br>
+-V: Print version number<br>
+-h: Print this help summary page</p>
+<h2>Related Nmap Hacking Tutorials</h2>
+<p><a href="https://www.hackingtutorials.org/scanning/port-scanning-and-os-detection-with-nmap/" target="_blank"><span style="color: #0066cc;">Open Port Scanning and OS Detection with Nmap in Kali Linux</span></a></p>
+<p><a href="https://www.hackingtutorials.org/scanning/scanning-for-live-hosts-with-nmap/" target="_blank"><span style="color: #0066cc;">Scanning a network for live hosts with Nmap</span></a></p>
+<p><a href="https://www.hackingtutorials.org/scanning/enumerate-webserver-directories-with-nmap/" target="_blank"><span style="color: #0066cc;">How to enumerate webserver directories with Nmap</span></a></p>
+<p><a href="https://www.hackingtutorials.org/scanning/scanning-for-smb-vulnerabilities-using-nmap/" target="_blank"><span style="color: #0066cc;">Scanning for SMB vulnerabilities using Nmap</span></a></p>
+<p><a href="https://www.hackingtutorials.org/scanning/heartbleed-scanning-using-nmap/" target="_blank"><span style="color: #0066cc;">Heartbleed SSL bug Scanning using Nmap on Kali Linux</span></a></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share on:</h3><div class="sd-content"><ul><li class="share-twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/" data-text="Open Port Scanning and OS Detection with Nmap in Kali Linux" data-via="HackingTutors">Tweet</a></li><li class="share-facebook"><div class="fb-share-button" data-href="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/" data-layout="button_count"></div></li><li class="share-tumblr"><a class="tumblr-share-button" target="_blank" href="https://www.tumblr.com/share" data-title="Open Port Scanning and OS Detection with Nmap in Kali Linux" data-content="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/" title="Share on Tumblr">Share on Tumblr</a></li><li class="share-linkedin"><div class="linkedin_button"><script type="in/share" data-url="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/" data-counter="right"></script></div></li><li class="share-pinterest"><div class="pinterest_button"><a href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F&amp;media=https%3A%2F%2Fwww.hackingtutorials.org%2Fwp-content%2Fuploads%2F2015%2F05%2FBasic-Scanning-Techniques.jpg&amp;description=Open%20Port%20Scanning%20and%20OS%20Detection%20with%20Nmap%20in%20Kali%20Linux" data-pin-do="buttonPin" data-pin-config="beside"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/pinit_fg_en_rect_gray_20.png" class="no-display" style="display: none;" hidden=""></a></div></li><li class="share-reddit"><div class="reddit_button"><iframe src="https://www.reddit.com/static/button/button1.html?newwindow=true&amp;width=120&amp;url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F&amp;title=Open%20Port%20Scanning%20and%20OS%20Detection%20with%20Nmap%20in%20Kali%20Linux" scrolling="no" style="display: none !important;" width="120" hidden="" height="22" frameborder="0"></iframe></div></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button" href="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>
+		
+				
+				
+			</div><!-- .post-content -->
+		</div>
+		
+	</div>
+	
+	
+	
+	
+	<div class="post-share">
+		<span class="text">Share.</span>
+		
+		<span class="share-links">
+
+			<a href="http://twitter.com/home?status=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F" class="fa fa-twitter" data-original-title="Tweet It">
+				<span class="visuallyhidden">Twitter</span></a>
+				
+			<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F" class="fa fa-facebook" data-original-title="Share on Facebook">
+				<span class="visuallyhidden">Facebook</span></a>
+				
+			<a href="http://plus.google.com/share?url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F" class="fa fa-google-plus" data-original-title="Share on Google+">
+				<span class="visuallyhidden">Google+</span></a>
+				
+			<a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F&amp;media=https%3A%2F%2Fwww.hackingtutorials.org%2Fwp-content%2Fuploads%2F2015%2F05%2FBasic-Scanning-Techniques.jpg" class="fa fa-pinterest" data-original-title="Share on Pinterest">
+				<span class="visuallyhidden">Pinterest</span></a>
+				
+			<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F" class="fa fa-linkedin" data-original-title="Share on LinkedIn">
+				<span class="visuallyhidden">LinkedIn</span></a>
+				
+			<a href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F&amp;name=Open+Port+Scanning+and+OS+Detection+with+Nmap+in+Kali+Linux" class="fa fa-tumblr" data-original-title="Share on Tumblr">
+				<span class="visuallyhidden">Tumblr</span></a>
+				
+			<a href="mailto:?subject=Open%20Port%20Scanning%20and%20OS%20Detection%20with%20Nmap%20in%20Kali%20Linux&amp;body=https%3A%2F%2Fwww.hackingtutorials.org%2Fscanning-tutorials%2Fport-scanning-and-os-detection-with-nmap%2F" class="fa fa-envelope-o" data-original-title="Share via Email">
+				<span class="visuallyhidden">Email</span></a>
+			
+		</span>
+	</div>
+	
+		
+</article>
+
+
+
+	<section class="navigate-posts">
+	
+		<div class="previous"><span class="main-color title"><i class="fa fa-chevron-left"></i> Previous Article</span><span class="link"><a href="https://www.hackingtutorials.org/wifi-hacking-tutorials/how-to-hack-a-tp-link-wr841n-router-wireless-network/" rel="prev">How to hack a TP link WR841N router wireless network</a></span>		</div>
+		
+		<div class="next"><span class="main-color title">Next Article <i class="fa fa-chevron-right"></i></span><span class="link"><a href="https://www.hackingtutorials.org/scanning-tutorials/scanning-for-live-hosts-with-nmap/" rel="next">Live hosts scanning with Nmap</a></span>		</div>
+		
+	</section>
+
+
+
+	
+	<section class="related-posts">
+		<h3 class="section-head">Related Posts</h3> 
+		<ul class="highlights-box three-col related-posts">
+		
+				
+			<li class="highlights column one-third">
+				
+				<article>
+						
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/openvas-9-part-4-custom-scan-configurations/" title="Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations" class="image-link">
+						<img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Vulnerability-Scanning-with-OpenVAS-9-part-4-Custom-scan-con.jpg" class="image wp-post-image no-display" alt="Vulnerability Scanning with OpenVAS 9 part 4 Custom scan configurations" title="Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations" width="214" height="140">	
+											</a>
+					
+								<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2018-11-01T18:51:29+01:00" itemprop="datePublished" class="meta-item">November 1, 2018</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/scanning-tutorials/openvas-9-part-4-custom-scan-configurations/#comments"><i class="fa fa-comments-o"></i> 6</a></span>					
+			</div>
+							
+					<h2><a href="https://www.hackingtutorials.org/scanning-tutorials/openvas-9-part-4-custom-scan-configurations/" title="Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations">Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations</a></h2>
+					
+										
+				</article>
+			</li>
+			
+				
+			<li class="highlights column one-third">
+				
+				<article>
+						
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-with-openvas-9-scanning-the-network/" title="Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network" class="image-link">
+						<img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Vulnerability-Scanning-with-OpenVAS-9-part-3-Scanning-the-Ne.jpg" class="image wp-post-image no-display" alt="Vulnerability Scanning with OpenVAS 9 part 3 Scanning the Network" title="Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network" width="214" height="140">	
+											</a>
+					
+								<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2018-07-19T12:18:58+01:00" itemprop="datePublished" class="meta-item">July 19, 2018</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-with-openvas-9-scanning-the-network/#comments"><i class="fa fa-comments-o"></i> 9</a></span>					
+			</div>
+							
+					<h2><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-with-openvas-9-scanning-the-network/" title="Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network">Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network</a></h2>
+					
+										
+				</article>
+			</li>
+			
+				
+			<li class="highlights column one-third">
+				
+				<article>
+						
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/" title="Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning" class="image-link">
+						<img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Vulnerability-Scanning-with-OpenVAS-9.jpg" class="image wp-post-image no-display" alt="Vulnerability Scanning with OpenVAS 9.0 part 2" title="Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning" width="214" height="140">	
+											</a>
+					
+								<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2018-05-09T10:38:46+01:00" itemprop="datePublished" class="meta-item">May 9, 2018</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/#comments"><i class="fa fa-comments-o"></i> 9</a></span>					
+			</div>
+							
+					<h2><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/" title="Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning">Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning</a></h2>
+					
+										
+				</article>
+			</li>
+			
+				</ul>
+	</section>
+
+	
+				<div class="comments">
+				
+	
+	<div id="comments">
+
+		
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span class="section-head">Leave A Reply</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/#respond" style="display:none;">Cancel Reply</a></small></h3>			<form action="https://www.hackingtutorials.org/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				
+			<p>
+				<textarea name="comment" id="comment" cols="45" rows="8" aria-required="true" placeholder="Your Comment"></textarea>
+			</p>
+				<p>
+					<input name="author" id="author" type="text" size="30" aria-required="true" placeholder="Your Name">
+				</p>
+
+				<p>
+					<input name="email" id="email" type="text" size="30" aria-required="true" placeholder="Your Email">
+				</p>
+			
+
+				<p>
+					<input name="url" id="url" type="text" size="30" placeholder="Your Website">
+				</p>
+			
+<p class="form-submit"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="210" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="279564f4c5"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1557712084474"></form>
+			</div><!-- #respond -->
+	
+	</div><!-- #comments -->
+				</div>
+	
+				
+		</div>
+		
+		
+			
+		
+		
+		<aside class="col-4 sidebar">
+		
+					<div class="">
+			
+				<ul>
+				
+							<li id="bunyad-popular-posts-widget-4" class="widget popular-posts">			<h3 class="widgettitle">Top Tutorials</h3>			
+			<ul class="posts-list">
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/networking/hacking-netcat-part-2-bind-reverse-shells/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Hacking-with-netcat-part-2-Bind-shells-and-Reverse-shells-fi.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display appear" alt="Hacking with netcat part 2 - Bind shells and Reverse shells" title="Hacking with Netcat part 2: Bind and reverse shells" width="110" height="96">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2016-11-15T18:01:05+01:00" itemprop="datePublished" class="meta-item">November 15, 2016</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/networking/hacking-netcat-part-2-bind-reverse-shells/#comments"><i class="fa fa-comments-o"></i> 2</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/networking/hacking-netcat-part-2-bind-reverse-shells/" title="Hacking with Netcat part 2: Bind and reverse shells">
+							Hacking with Netcat part 2: Bind and reverse shells</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/infosec-books/the-best-hacking-books-2018/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/The-Best-Hacking-Books-2018-110x96.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display appear" alt="The Best Hacking Books 2018" title="The Best Hacking Books 2018" width="110" height="96">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2018-02-02T14:15:59+01:00" itemprop="datePublished" class="meta-item">February 2, 2018</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/infosec-books/the-best-hacking-books-2018/#comments"><i class="fa fa-comments-o"></i> 13</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/infosec-books/the-best-hacking-books-2018/" title="The Best Hacking Books 2018">
+							The Best Hacking Books 2018</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/metasploit-tutorials/metasploit-commands/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Metasploit-commands-fi-2-110x96.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display appear" alt="Metasploit commands" title="Metasploit commands" width="110" height="96">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2016-05-01T10:09:32+01:00" itemprop="datePublished" class="meta-item">May 1, 2016</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/metasploit-tutorials/metasploit-commands/#comments"><i class="fa fa-comments-o"></i> 13</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/metasploit-tutorials/metasploit-commands/" title="Metasploit commands">
+							Metasploit commands</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Top-10-Wifi-Hacking-Tools-in-Kali-Linux-140x78.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display appear" alt="Top 10 Wifi Hacking Tools in Kali Linux" title="The Top 10 Wifi Hacking Tools in Kali Linux" srcset="https://www.hackingtutorials.org/wp-content/uploads/2015/07/Top-10-Wifi-Hacking-Tools-in-Kali-Linux-140x78.jpg 140w, https://www.hackingtutorials.org/wp-content/uploads/2015/07/Top-10-Wifi-Hacking-Tools-in-Kali-Linux-300x166.jpg 300w, https://www.hackingtutorials.org/wp-content/uploads/2015/07/Top-10-Wifi-Hacking-Tools-in-Kali-Linux-240x133.jpg 240w, https://www.hackingtutorials.org/wp-content/uploads/2015/07/Top-10-Wifi-Hacking-Tools-in-Kali-Linux.jpg 510w" sizes="(max-width: 110px) 100vw, 110px" width="110" height="61">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2015-07-16T10:55:01+01:00" itemprop="datePublished" class="meta-item">July 16, 2015</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/#comments"><i class="fa fa-comments-o"></i> 15</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/wifi-hacking-tutorials/top-10-wifi-hacking-tools-in-kali-linux/" title="The Top 10 Wifi Hacking Tools in Kali Linux">
+							The Top 10 Wifi Hacking Tools in Kali Linux</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-pt-1/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Vulnerability-Scanning-with-OpenVAS-9_002.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display appear" alt="" title="Vulnerability Scanning with OpenVAS 9 part 1: Installation &amp; Setup" width="110" height="96">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2018-04-18T10:06:08+01:00" itemprop="datePublished" class="meta-item">April 18, 2018</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-pt-1/#respond"><i class="fa fa-comments-o"></i> 0</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-pt-1/" title="Vulnerability Scanning with OpenVAS 9 part 1: Installation &amp; Setup">
+							Vulnerability Scanning with OpenVAS 9 part 1: Installation &amp; Setup</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/web-application-hacking/hack-a-wordpress-website-with-wpscan/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/wpscan-140x92.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display appear" alt="wpscan Wordpress vulnerability scanner" title="How to hack a WordPress website with WPScan" srcset="https://www.hackingtutorials.org/wp-content/uploads/2015/06/wpscan-140x92.jpg 140w, https://www.hackingtutorials.org/wp-content/uploads/2015/06/wpscan-300x198.jpg 300w, https://www.hackingtutorials.org/wp-content/uploads/2015/06/wpscan-230x152.jpg 230w, https://www.hackingtutorials.org/wp-content/uploads/2015/06/wpscan.jpg 511w" sizes="(max-width: 110px) 100vw, 110px" width="110" height="72">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2015-06-03T19:52:09+01:00" itemprop="datePublished" class="meta-item">June 3, 2015</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/web-application-hacking/hack-a-wordpress-website-with-wpscan/#comments"><i class="fa fa-comments-o"></i> 21</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/web-application-hacking/hack-a-wordpress-website-with-wpscan/" title="How to hack a WordPress website with WPScan">
+							How to hack a WordPress website with WPScan</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+						</ul>
+			
+			</li>
+		
+		<li id="text-5007" class="widget widget_text">			<div class="textwidget"><script async="" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/adsbygoogle.js"></script>
+<!-- Hackingtutorials.org - Sidebar 2 336x280 -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-2195678332656815" data-ad-slot="7394970882"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</li>
+<li id="blog_subscription-2" class="widget widget_blog_subscription jetpack_subscription_widget"><h3 class="widgettitle">Subscribe</h3>
+            <form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-2">
+				                    <div id="subscribe-text"><p>Enter your email address to subscribe to Hacking Tutorials and receive notifications of new tutorials by email.</p>
+</div><p>Join 17,542 other subscribers</p>
+                    <p id="subscribe-email">
+                        <label id="jetpack-subscribe-label" class="screen-reader-text" for="subscribe-field-blog_subscription-2">
+							Email Address                        </label>
+                        <input type="email" name="email" required="required" class="required" id="subscribe-field-blog_subscription-2" placeholder="Email Address">
+                    </p>
+
+                    <p id="subscribe-submit">
+                        <input type="hidden" name="action" value="subscribe">
+                        <input type="hidden" name="source" value="https://www.hackingtutorials.org/scanning-tutorials/port-scanning-and-os-detection-with-nmap/">
+                        <input type="hidden" name="sub-type" value="widget">
+                        <input type="hidden" name="redirect_fragment" value="blog_subscription-2">
+						                        <button type="submit" name="jetpack_subscriptions_widget">
+	                        Subscribe                        </button>
+                    </p>
+				            </form>
+		
+</li>
+		<li id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widgettitle">Recent Tutorials</h3>		<ul>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/openvas-9-part-4-custom-scan-configurations/">Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-with-openvas-9-scanning-the-network/">Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/">Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-pt-1/">Vulnerability Scanning with OpenVAS 9 part 1: Installation &amp; Setup</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/infosec-books/the-best-hacking-books-2018/">The Best Hacking Books 2018</a>
+									</li>
+					</ul>
+		</li>
+<li id="text-5011" class="widget widget_text"><h3 class="widgettitle">Virtual Hacking Labs</h3>			<div class="textwidget"><a rel="nofollow noopener noreferrer" target="_blank" href="https://www.virtualhackinglabs.com/?utm_source=ht&amp;utm_medium=sidebanner&amp;utm_campaign=ht"><img alt="Penetration Testin Course and Hacking Labs" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/VHL-sidebanner2.jpg" class="no-display appear" border="0"></a></div>
+		</li>
+<li id="text-5012" class="widget widget_text">			<div class="textwidget"><!-- HackingTutorials.org - Top Linkunit 2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2195678332656815" data-ad-slot="7918114489" data-ad-format="link"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</li>
+<li id="categories-2" class="widget widget_categories"><h3 class="widgettitle">Categories</h3>		<ul>
+				<li class="cat-item cat-item-126"><a href="https://www.hackingtutorials.org/category/digital-forensics/" title="The digital forensics category contains tutorials related to digital forensics subjects. Hacking Tutorials primary focus is on ethical hacking, penetration testing and offensive security but we will cover some dfir&nbsp;basics in the future too.">Digital Forensics</a>
+</li>
+	<li class="cat-item cat-item-116"><a href="https://www.hackingtutorials.org/category/exploit-tutorials/" title="In the exploit tutorial category we will be learning how to work with different kinds of exploits. We will be learning how to analyse exploit code and how to successfully compile and execute them against a specific target. We will also look at the basics of exploit development.">Exploit tutorials</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://www.hackingtutorials.org/category/general-tutorials/" title="The general hacking tutorials section contains general hacking tutorials and articles&nbsp;on different subjects. We will be looking at how to install Kali Linux on a virtual machine, how to setup VPN to maintain privacy and how to generate password lists using different tools like Crunch. Apart from the step by step tutorials we will also be publishing articles related to&nbsp;general hacking and security in this section.">General Tutorials</a>
+</li>
+	<li class="cat-item cat-item-144"><a href="https://www.hackingtutorials.org/category/infosec-books/" title="In this category we'll be publishing reviews about information security related hacking&nbsp;books covering a wide range of subjects of interest for ethical hackers, penetration testers, red teamers and everyone else in the field of IT security. The books that will be reviewed will cover subjects such as: Penetration testing, red teaming, web application hacking, reverse engineering, network security monitoring and a lot more.">Hacking Books</a>
+</li>
+	<li class="cat-item cat-item-108"><a href="https://www.hackingtutorials.org/category/hacking-courses/" title="In this section on Hacking Tutorials we will be publishing course reviews. Most courses reviewed will be hacking courses&nbsp;such as OSCP, OSWP and CEH&nbsp;or very related to hacking.">Hacking Courses</a>
+</li>
+	<li class="cat-item cat-item-60"><a href="https://www.hackingtutorials.org/category/malware-analysis-tutorials/" title="In the Malware Analysis tutorials you will be learning about static and dynamic malware analysis and tools and more general subjects such as what kinds of malware are around and how antivirus software works. We will be expanding the malware analysis tutorial section later in 2016.">Malware Analysis Tutorials</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://www.hackingtutorials.org/category/metasploit-tutorials/" title="For many people this is probably the most interesting section; the Metasploit tutorials section. Metasploit is one of the most popular penetration testing software available on the market. Metasploit contains numerous modules, exploits, payloads, encoders and tools to conduct a full penetration test. In this section we will be covering all the Metasploit basics such as how to install Metasploit and which commands are available at the command line interface. We will also be setting up a popular vulnerable machine to practice on: Metasploitable 2. After the basics we will be covering more advanced subject such as enumeration techniques, vulnerability analysis and exploiting the target machine. Of course we will be practicing on Metasploitable 2 virtual machine.">Metasploit Tutorials</a>
+</li>
+	<li class="cat-item cat-item-115"><a href="https://www.hackingtutorials.org/category/networking/" title="In the networking tutorials we will be learning about pivoting, file transfers and how to use networking tools like Netcat.">Networking</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="https://www.hackingtutorials.org/category/scanning-tutorials/" title="Scanning, information gathering&nbsp;and enumeration is one of the most important tasks in a penetration test. In the scanning and information gathering&nbsp;section you will be learning about mapping networks, run ports cans, enumerate publicly available sources such as whois and social media, automated vulnerability scanners and a lot more&nbsp;. We will be using Nmap to&nbsp;determine open ports, running services and the operating system. You will also learn how to use the NMap scripting engine (NSE) for vulnerability scanning and enumeration.">Scanning Tutorials</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="https://www.hackingtutorials.org/category/web-application-hacking/" title="In this section we will be publishing hacking tutorials related to pentesting web applications and webservers. You'll be learning how hackers enumerate usernames on the very popular WordPress CMS and how passwords are bruteforced with wpscan. If you want to learn more about web vulnerability scanners like Nikto and Uniscan, you're in the right section.">Web Applications</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="https://www.hackingtutorials.org/category/wifi-hacking-tutorials/" title="In the WiFi hacking tutorial section you will find hacking tutorials related to hacking wireless networks, piping passwords generators like Crunch with Aircrack-NG, how to bypass MAC filtering and a lot more. It is suggested that you have a wireless network interface capable of packet injection which supports usage in promiscuous (monitoring)&nbsp;mode. The wifi hacking tutorials will teach you about hacking&nbsp;WPS vulnerabilities with Reaver and Pixie dust and how to brute force default routers passwords.">Wifi Hacking Tutorials</a>
+</li>
+		</ul>
+			</li>
+<li id="dlm_widget_downloads-3" class="widget dlm_widget_downloads"><h3 class="widgettitle">Downloads</h3><ul class="dlm-downloads"><li><a class="download-link" title="Version 1" href="https://www.hackingtutorials.org/download/398/" rel="nofollow">
+	directory_scanner.py	(17151 downloads)
+</a></li><li><a class="download-link" title="" href="https://www.hackingtutorials.org/download/712/" rel="nofollow">
+	PEiD Userdb	(10377 downloads)
+</a></li><li><a class="download-link" title="" href="https://www.hackingtutorials.org/download/715/" rel="nofollow">
+	PEiD-0.95-20081103.zip	(18630 downloads)
+</a></li><li><a class="download-link" title="Please set a version in your WordPress admin" href="#" rel="nofollow">
+	"wifi_jammer.py" <strong>has no version set!</strong>
+</a></li></ul></li>
+		
+				</ul>
+		
+			</div>
+		
+		</aside>
+		
+		
+	</div> <!-- .row -->
+		
+	
+</div> <!-- .main -->
+
+
+		
+	<footer class="main-footer">
+	
+			<div class="wrap">
+		
+					<ul class="widgets row cf">
+						<li class="widget col-4 widget_recent_entries">		<h3 class="widgettitle">Recent Tutorials</h3>		<ul>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/openvas-9-part-4-custom-scan-configurations/">Vulnerability Scanning with OpenVAS 9 part 4: Custom scan configurations</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-with-openvas-9-scanning-the-network/">Vulnerability Scanning with OpenVAS 9 part 3: Scanning the Network</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/">Vulnerability Scanning with OpenVAS 9 part 2: Vulnerability Scanning</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-pt-1/">Vulnerability Scanning with OpenVAS 9 part 1: Installation &amp; Setup</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/infosec-books/the-best-hacking-books-2018/">The Best Hacking Books 2018</a>
+									</li>
+											<li>
+					<a href="https://www.hackingtutorials.org/general-tutorials/hacking-tutorials-2018/">Hacking Tutorials 2018</a>
+									</li>
+					</ul>
+		</li>			<li class="widget col-4 popular-posts">			<h3 class="widgettitle">Popular Tutorials</h3>			
+			<ul class="posts-list">
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/hacking-courses/offensive-security-certified-professional-oscp/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/OSCP-Offensive-Security-Certified-Professional-2-110x96.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display" alt="OSCP Offensive Security Certified Professional" title="Review: Offensive Security Certified Professional (OSCP)" width="110" height="96">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2016-09-01T21:38:39+01:00" itemprop="datePublished" class="meta-item">September 1, 2016</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/hacking-courses/offensive-security-certified-professional-oscp/#comments"><i class="fa fa-comments-o"></i> 114</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/hacking-courses/offensive-security-certified-professional-oscp/" title="Review: Offensive Security Certified Professional (OSCP)">
+							Review: Offensive Security Certified Professional (OSCP)</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/exploit-tutorials/exploiting-eternalblue-for-shell-with-empire-msfconsole/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Exploiting-Eternalblue-for-shell-with-Empire-ft-wm-110x96.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display" alt="Exploiting Eternalblue for shell with Empire" title="Exploiting Eternalblue for shell with Empire &amp; Msfconsole" width="110" height="96">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2017-04-18T15:38:01+01:00" itemprop="datePublished" class="meta-item">April 18, 2017</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/exploit-tutorials/exploiting-eternalblue-for-shell-with-empire-msfconsole/#comments"><i class="fa fa-comments-o"></i> 38</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/exploit-tutorials/exploiting-eternalblue-for-shell-with-empire-msfconsole/" title="Exploiting Eternalblue for shell with Empire &amp; Msfconsole">
+							Exploiting Eternalblue for shell with Empire &amp; Msfconsole</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+							<li>
+				
+					<a href="https://www.hackingtutorials.org/general-tutorials/installing-vpn-on-kali-linux-2016-rolling/"><img src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/Installing-VPN-on-Kali-Linux-2016-rolling-fim-150x94.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image no-display" alt="Installing VPN on Kali Linux 2016" title="Installing VPN on Kali Linux 2016 Rolling" srcset="https://www.hackingtutorials.org/wp-content/uploads/2016/03/Installing-VPN-on-Kali-Linux-2016-rolling-fim-150x94.jpg 150w, https://www.hackingtutorials.org/wp-content/uploads/2016/03/Installing-VPN-on-Kali-Linux-2016-rolling-fim-300x188.jpg 300w, https://www.hackingtutorials.org/wp-content/uploads/2016/03/Installing-VPN-on-Kali-Linux-2016-rolling-fim.jpg 700w" sizes="(max-width: 110px) 100vw, 110px" width="110" height="69">					
+																					
+					</a>
+					
+					<div class="content">
+					
+									<div class="cf listing-meta meta above">
+					
+				<span class="meta-item author">By <a href="https://www.hackingtutorials.org/author/hacking-tutorials/" title="Posts by Hacking Tutorials" rel="author">Hacking Tutorials</a></span><time datetime="2016-03-17T09:35:15+01:00" itemprop="datePublished" class="meta-item">March 17, 2016</time><span class="meta-item comments"><a href="https://www.hackingtutorials.org/general-tutorials/installing-vpn-on-kali-linux-2016-rolling/#comments"><i class="fa fa-comments-o"></i> 36</a></span>					
+			</div>
+							
+						<a href="https://www.hackingtutorials.org/general-tutorials/installing-vpn-on-kali-linux-2016-rolling/" title="Installing VPN on Kali Linux 2016 Rolling">
+							Installing VPN on Kali Linux 2016 Rolling</a>
+							
+													
+																			
+					</div>
+				
+				</li>
+						</ul>
+			
+			</li>		
+		<li class="widget col-4 dlm_widget_downloads"><h3 class="widgettitle">Featured Downloads</h3><ul class="dlm-downloads"><li><a class="download-link" title="Version 1" href="https://www.hackingtutorials.org/download/398/" rel="nofollow">
+	directory_scanner.py	(17151 downloads)
+</a></li><li><a class="download-link" title="" href="https://www.hackingtutorials.org/download/712/" rel="nofollow">
+	PEiD Userdb	(10377 downloads)
+</a></li><li><a class="download-link" title="" href="https://www.hackingtutorials.org/download/715/" rel="nofollow">
+	PEiD-0.95-20081103.zip	(18630 downloads)
+</a></li><li><a class="download-link" title="Please set a version in your WordPress admin" href="#" rel="nofollow">
+	"wifi_jammer.py" <strong>has no version set!</strong>
+</a></li></ul></li>			</ul>
+				
+		</div>
+	
+		
+	
+			<div class="lower-foot">
+			<div class="wrap">
+		
+						
+			<div class="widgets">
+							<div class="textwidget"><p>© Hacking Tutorials 2018</p>
+</div>
+					</div>
+			
+					
+			</div>
+		</div>		
+		
+	</footer>
+	
+</div> <!-- .main-wrap -->
+
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/www.hackingtutorials.org\/scanning-tutorials\/port-scanning-and-os-detection-with-nmap\/":210};
+	</script>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&appId=249643311490&version=v2.3'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+			<script>
+			jQuery( document.body ).on( 'post-load', function() {
+				if ( 'undefined' !== typeof FB ) {
+					FB.XFBML.parse();
+				}
+			} );
+			</script>
+			<script id="tumblr-js" type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/share-button.js"></script><script type="text/javascript">
+			jQuery( document ).ready( function() {
+				jQuery.getScript( 'https://platform.linkedin.com/in.js?async=true', function success() {
+					IN.init();
+				});
+			});
+			jQuery( document.body ).on( 'post-load', function() {
+				if ( typeof IN != 'undefined' )
+					IN.parse();
+			});
+			</script>					<script type="text/javascript">
+				// Pinterest shared resources
+				var s = document.createElement("script");
+				s.type = "text/javascript";
+				s.async = true;
+				s.setAttribute('data-pin-hover', true);				s.src = window.location.protocol + "//assets.pinterest.com/js/pinit.js";
+				var x = document.getElementsByTagName("script")[0];
+				x.parentNode.insertBefore(s, x);
+				// if 'Pin it' button has 'counts' make container wider
+				jQuery(window).load( function(){ jQuery( 'li.share-pinterest a span:visible' ).closest( '.share-pinterest' ).width( '80px' ); } );
+			</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="/scanning-tutorials/port-scanning-and-os-detection-with-nmap/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email">
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" size="25" autocomplete="off" title="This field is for validation and should not be changed">
+			
+			<img style="float: right; display: none !important;" class="loading" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/loading.gif" alt="loading" width="16" hidden="" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/comment-reply.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.hackingtutorials.org\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/scripts.js"></script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/devicepx-jetpack.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var Bunyad = {"ajaxurl":"https:\/\/www.hackingtutorials.org\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/bunyad-theme.js"></script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/jquery_003.js"></script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/jquery_004.js"></script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/wp-embed.js"></script>
+<script async="async" type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/form.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/sharing.js"></script>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+<script type="text/javascript" src="Nmap%20Open%20Port%20Scanning%20and%20OS%20Detection_files/e-201920.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.3',blog:'93167895',post:'210',tz:'1',srv:'www.hackingtutorials.org'} ]);
+	_stq.push([ 'clickTrackerInit', '93167895', '210' ]);
+</script>
+
+
+</body></html>
