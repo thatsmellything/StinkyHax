@@ -59,14 +59,18 @@ sudo service ssh restart
 echo "making sure ssh survives reboot"
 update-rc.d -f ssh enable 2 3 4 5
 echo "Installing kali linux full"
-apt-get install kali-linux-full -yy
-echo "Installing kali linux all"
-apt-get install kali-linux-all -yy
+apt-get install kali-linux-everything -yy
+
 echo "downloading your notes"
 cd Desktop
 git clone https://github.com/thatsmellything/StinkyHax.git
 echo "upgrading the entire system"
 apt-get upgrade -yy
+echo "making git ssh keys"
+ssh-keygen -t rsa -b 4096 -C "thesmelliestman@gmail.com"
+sudo ssh-add ~/.ssh/id_rsa
+echo "copy this and put it into your github account"
+
 echo "--------------------------------------------------------"
 echo "|system should be good to go :)                        |"
 echo "|reboot may be needed for graphics cards to take effect|"
@@ -114,14 +118,18 @@ sudo service ssh restart
 echo "making sure ssh survives reboot"
 update-rc.d -f ssh enable 2 3 4 5
 echo "Installing kali linux full"
-apt-get install kali-linux-full -yy
-echo "Installing kali linux all"
-apt-get install kali-linux-all -yy
+apt-get install kali-linux-everything -yy
+
 echo "downloading your notes"
 cd Desktop
 git clone https://github.com/thatsmellything/StinkyHax.git
 echo "upgrading the entire system"
 apt-get upgrade -yy
+echo "making git ssh keys"
+ssh-keygen -t rsa -b 4096 -C "thesmelliestman@gmail.com"
+sudo ssh-add ~/.ssh/id_rsa
+echo "copy this and put it into your github account"
+
 echo "--------------------------------------------------------"
 echo "|system should be good to go :)                        |"
 echo "|reboot may be needed for graphics cards to take effect|"
@@ -155,64 +163,9 @@ echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 }
 
 
-upc() {
-echo "Updating system"
-sudo apt-get update
-echo "Installing geany"
-apt-get install geany -yy
-echo "Installing the alpha wifi drivers"
-apt install realtek-rtl88xxau-dkms
-echo "installing gts 450 graphics drivers"
-echo "If your system is running a newer graphics card you may want to install them yourself via apt-get install nvidia-driver"
-apt-get install nvidia-legacy-390xx-driver -yy
-apt-get install nvidia-legacy-390xx-smi
-apt-get install nvidia-legacy-390xx-opencl-icd -yy
-echo "downloading nmap scripts for vulnerabilities in db"
-cd /usr/share/nmap/scripts
-git clone https://github.com/VulnersCom/nmap-Vulners.git
-git clone https://github.com/scipag/vulscan.git
-cd /usr/share/nmap/scripts/vulscan/utilities/updater/
-chmod +x updateFiles.sh
-echo "updating files"
-./updateFiles.sh
-echo "Installing kali linux full"
-apt-get install kali-linux-full -yy
-echo "Installing kali linux all"
-apt-get install kali-linux-all -yy
-echo "upgrading the entire system"
-apt-get upgrade -yy
-echo "--------------------------------------------------------"
-echo "|system should be good to go :)                        |"
-echo "|reboot may be needed for graphics cards to take effect|"
-echo "--------------------------------------------------------"
-}
 
-upc() {
-echo "Updating system"
-sudo apt-get update
-echo "Installing geany"
-apt-get install geany -yy
-echo "Installing the alpha wifi drivers"
-apt install realtek-rtl88xxau-dkms
-echo "downloading nmap scripts for vulnerabilities in db"
-cd /usr/share/nmap/scripts
-git clone https://github.com/VulnersCom/nmap-Vulners.git
-git clone https://github.com/scipag/vulscan.git
-cd /usr/share/nmap/scripts/vulscan/utilities/updater/
-chmod +x updateFiles.sh
-echo "updating files"
-./updateFiles.sh
-echo "Installing kali linux full"
-apt-get install kali-linux-full -yy
-echo "Installing kali linux all"
-apt-get install kali-linux-all -yy
-echo "upgrading the entire system"
-apt-get upgrade -yy
-echo "--------------------------------------------------------"
-echo "|system should be good to go :)                        |"
-echo "|reboot may be needed for graphics cards to take effect|"
-echo "--------------------------------------------------------"
-}
+
+
 
 clean() {
 
