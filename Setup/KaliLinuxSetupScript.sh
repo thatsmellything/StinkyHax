@@ -74,7 +74,9 @@ ssh-keygen -t rsa -b 4096 -C "thesmelliestman@gmail.com"
 eval "$(ssh-agent -s)"
 sudo ssh-add ~/.ssh/id_rsa
 echo "Installing xclip so that you can just paste it in"
-echo ""
+echo "Setting up git config stuff"
+git config --global user.email "thesmelliestman@gmail.com"
+git config --global user.name "thatsmellything"
 echo ""
 sudo apt-get install xclip
 xclip -sel clip < ~/.ssh/id_rsa.pub
