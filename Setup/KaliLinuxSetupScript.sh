@@ -58,15 +58,6 @@ echo "restarting ssh service"
 sudo service ssh restart
 echo "making sure ssh survives reboot"
 update-rc.d -f ssh enable 2 3 4 5
-echo "Installing kali linux full"
-apt-get install kali-linux-core -yy
-apt-get install kali-linux-default -yy
-apt-get install kali-linux-large -yy
-apt-get install kali-tools-information-gathering -yy
-apt-get install kali-tools-passwords -yy
-apt-get install kali-linux-everything -yy
-
-
 echo "upgrading the entire system"
 apt-get upgrade -yy
 echo "making git ssh keys"
@@ -88,9 +79,7 @@ echo "|reboot may be needed for graphics cards to take effect|"
 echo "--------------------------------------------------------"
 }
 
-umac() {
-echo "Updating"
-apt-get update
+all() {
 echo "Installing kali linux full"
 apt-get install kali-linux-core -yy
 apt-get install kali-linux-default -yy
@@ -98,10 +87,11 @@ apt-get install kali-linux-large -yy
 apt-get install kali-tools-information-gathering -yy
 apt-get install kali-tools-passwords -yy
 apt-get install kali-linux-everything -yy
-echo "Installing geany"
-apt-get install geany -yy
-echo "Installing the alpha wifi drivers"
-apt install realtek-rtl88xxau-dkms
+}
+
+umac() {
+echo "Updating"
+apt-get update
 echo "downloading nmap scripts for vulnerabilities in db"
 cd /usr/share/nmap/scripts
 git clone https://github.com/VulnersCom/nmap-Vulners.git
@@ -160,18 +150,18 @@ echo "restarting ssh service"
 sudo service ssh restart
 echo "making sure ssh survives reboot"
 update-rc.d -f ssh enable 2 3 4 5
-echo "Installing kali linux full"
-apt-get install kali-linux-everything -yy
-
-echo "downloading your notes"
-cd Desktop
-git clone https://github.com/thatsmellything/StinkyHax.git
-echo "upgrading the entire system"
-apt-get upgrade -yy
 echo "making git ssh keys"
 ssh-keygen -t rsa -b 4096 -C "thesmelliestman@gmail.com"
+eval "$(ssh-agent -s)"
 sudo ssh-add ~/.ssh/id_rsa
-echo "copy this and put it into your github account"
+echo "Installing xclip so that you can just paste it in"
+echo "Setting up git config stuff"
+git config --global user.email "thesmelliestman@gmail.com"
+git config --global user.name "thatsmellything"
+echo ""
+sudo apt-get install xclip
+xclip -sel clip < ~/.ssh/id_rsa.pub
+echo "go to your github and add the key, it is already attached to your clipboard now"
 
 echo "--------------------------------------------------------"
 echo "|system should be good to go :)                        |"
@@ -289,7 +279,13 @@ if [ "$1" == "--fimac" ]; then
     leave
 fi
 
-#Fresh Kali Install
+#Download it all
+if ["$1" == "--all" ]; then
+    all
+    leave
+fi
+
+#Update Kali Mac
 if [ "$1" == "--umac" ]; then
     umac
     
