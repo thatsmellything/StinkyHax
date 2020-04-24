@@ -33,7 +33,7 @@ cd wifi_on_kali
 sudo chmod +x install-drivers.bash && sudo bash install-drivers.bash
 cd
 echo "Installing geany"
-apt-get install geany -yy
+sudo apt-get install geany -yy
 echo "Installing the alpha wifi drivers"
 apt install realtek-rtl88xxau-dkms
 echo "downloading nmap scripts for vulnerabilities in db"
