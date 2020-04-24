@@ -62,7 +62,7 @@ echo "upgrading the entire system"
 apt-get upgrade -yy
 echo "making git ssh keys"
 ssh-keygen -t rsa -b 4096 -C "thesmelliestman@gmail.com"
-eval "$(ssh-agent -s)"
+sudo eval "$(ssh-agent -s)"
 sudo ssh-add ~/.ssh/id_rsa
 echo "Installing xclip so that you can just paste it in"
 echo "Setting up git config stuff"
