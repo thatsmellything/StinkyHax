@@ -24,10 +24,14 @@ echo "updating files"
 }
 
 fimac() {
-echo "Changing sources.list"
-echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 echo "Updating system"
 sudo apt-get update
+echo "Making wifi available"
+sudo wget https://gregoryconrad.github.io/downloads/wifi_on_kali.zip
+unzip wifi_on_kali.zip
+cd wifi_on_kali
+sudo chmod +x install-drivers.bash && sudo bash install-drivers.bash
+cd
 echo "Installing geany"
 apt-get install geany -yy
 echo "Installing the alpha wifi drivers"
