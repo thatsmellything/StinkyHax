@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+echo "DEPRECATED DO NOT USE ME"
 
 # Check for less utility and install if needed:
 
