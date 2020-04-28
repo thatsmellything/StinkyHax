@@ -35,7 +35,7 @@ cd
 echo "Installing geany"
 sudo apt-get install geany -yy
 echo "Installing the alpha wifi drivers"
-apt install realtek-rtl88xxau-dkms
+sudo apt install realtek-rtl88xxau-dkms
 echo "downloading nmap scripts for vulnerabilities in db"
 cd /usr/share/nmap/scripts
 git clone https://github.com/VulnersCom/nmap-Vulners.git
