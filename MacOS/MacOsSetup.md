@@ -1,4 +1,4 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
 {\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
 {\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;}
@@ -17,4 +17,6 @@ Brew search \'97casks\
 \
 Brew search (thing)\
 \
-https://github.com/sidaf/homebrew-pentest}
+https://github.com/sidaf/homebrew-pentest\
+\
+This is a test}
