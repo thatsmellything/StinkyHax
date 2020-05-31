@@ -19,4 +19,3 @@ Brew search (thing)\
 \
 https://github.com/sidaf/homebrew-pentest\
 \
-This is a test}
